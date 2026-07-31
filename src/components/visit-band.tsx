@@ -40,14 +40,14 @@ export function VisitBand({ media = "photo" }: { media?: "map" | "photo" }) {
               </div>
             )}
 
-            {/* Scrim: full wash on mobile, L→R on larger screens */}
+            {/* Scrim: full wash on mobile, darker L→R on larger screens (matches hero) */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(27,67,50,0.92)_0%,rgba(27,67,50,0.85)_45%,rgba(27,67,50,0.78)_100%)] md:bg-[linear-gradient(90deg,#1b4332_0%,rgba(27,67,50,0.92)_34%,rgba(27,67,50,0.55)_52%,rgba(27,67,50,0.18)_72%,transparent_88%)]"
+              className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgb(17_44_33/0.94)_0%,rgb(15_38_29/0.88)_45%,rgb(13_30_23/0.8)_100%)] md:bg-[linear-gradient(90deg,#0f271d_0%,#10281e_28%,rgb(17_43_32/0.92)_42%,rgb(15_37_27/0.47)_58%,rgb(13_30_23/0.07)_72%,transparent_88%)]"
             />
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-deep/40 via-transparent to-deep/25"
+              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0f271d]/50 via-transparent to-[#0f271d]/30"
             />
 
             <div className="relative flex min-h-[24rem] items-end px-5 py-10 sm:min-h-[28rem] sm:items-center sm:px-12 sm:py-14 lg:min-h-[32rem] lg:px-16 lg:py-16">
