@@ -10,11 +10,10 @@ export default function NotFound() {
           404
         </Eyebrow>
         <h1 className="mt-6 font-display text-display-sm font-semibold sm:text-display-md">
-          This page slipped out of the tub
+          This page isn&rsquo;t here
         </h1>
         <p className="mx-auto mt-5 max-w-prose text-lg leading-relaxed text-cream/80">
-          We could not find the page you were after. Head back to the start, or come see us on Blue
-          Star Highway.
+          The link may be old, or the page moved. Head home, or reach us on Blue Star Highway.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-4">
           <ButtonLink href="/" variant="gold" size="lg">

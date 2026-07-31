@@ -38,13 +38,13 @@ export function HomeHero() {
           </h1>
 
           <p className="mt-5 max-w-lg text-[17px] leading-relaxed text-cream/90 sm:mt-6 sm:text-[18px]">
-            Full-service grooming when you want it handled for you. Self-service washing when
-            you&rsquo;d rather do it yourself. One shop in South Haven for both.
+            Book a full groom when you want it done for you. Use the self-service wash when
+            you&rsquo;d rather handle it yourself. Both under one roof in South Haven.
           </p>
 
           <div className="mt-8 sm:mt-9">
             <ButtonLink href="/services" variant="gold" size="lg" className="w-full sm:w-auto">
-              See Our Services
+              See our services
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </ButtonLink>
           </div>

@@ -9,7 +9,7 @@ export const site = {
   legalName: "The Polished Pup",
   tagline: "Where every pup leaves polished.",
   shortDescription:
-    "Full-service dog grooming and spa care, plus Southwest Michigan's only self-service dog wash, in South Haven.",
+    "Full-service dog grooming and a self-service dog wash in South Haven — the only self-wash setup of its kind in Southwest Michigan.",
   url: "https://thepolishedpupboutique.com",
   logo: "/images/the-polished-pup-logo.png",
   priceRange: "$$",

@@ -1,4 +1,4 @@
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
@@ -19,13 +19,12 @@ export function AboutTeaser() {
               We built the place we wished South Haven already had
             </h2>
             <p className="mt-6 max-w-prose text-[18px] leading-relaxed text-cream/80">
-              The Polished Pup started with a simple observation &mdash; Southwest Michigan had
-              nowhere to wash your own dog. We figured if we needed it, our neighbours probably did
-              too.
+              Southwest Michigan didn&rsquo;t have a place to wash your own dog. We needed one, and
+              figured our neighbors did too.
             </p>
             <p className="mt-4 max-w-prose text-[18px] leading-relaxed text-cream/70">
-              So we built a place where locals and visitors alike feel like it was made just for
-              them: warm, unhurried and genuinely happy to see your dog walk through the door.
+              So we opened The Polished Pup: a shop that&rsquo;s glad to see your dog, whether
+              you&rsquo;re a local or just in town for the weekend.
             </p>
             <div className="mt-9">
               <ButtonLink href="/about-us" variant="gold" size="lg">
@@ -48,15 +47,9 @@ export function AboutTeaser() {
               </div>
 
               <div className="absolute bottom-0 left-4 z-10 max-w-[12.5rem] rounded-2xl border border-deep/15 bg-gold px-5 py-4 shadow-lifted sm:left-6 sm:max-w-[13.5rem] sm:px-6 sm:py-5">
-                <Star
-                  className="h-4 w-4 text-deep"
-                  aria-hidden="true"
-                  strokeWidth={1.6}
-                  fill="currentColor"
-                />
-                <p className="mt-2 text-[17px] font-semibold leading-snug text-deep">
-                  <span className="block">Built for locals</span>
-                  and lake-town visitors alike
+                <p className="text-[17px] font-semibold leading-snug text-deep">
+                  <span className="block">For locals</span>
+                  and weekend visitors
                 </p>
               </div>
             </div>

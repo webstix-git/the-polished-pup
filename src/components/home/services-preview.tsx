@@ -15,7 +15,7 @@ const previews = [
     title: "Full-Service Grooming",
     price: "By appointment",
     description:
-      "Hand off the leash and let our groomers give your dog patient, one-on-one attention.",
+      "Drop your dog with us for a bath, cut, and finish — one dog at a time.",
     image: photos.fullGroomingYorkie,
     alt: "A Yorkshire Terrier being groomed with a comb and scissors at The Polished Pup",
     href: "/services#full-service",
@@ -24,7 +24,7 @@ const previews = [
     title: "Self-Service Wash",
     price: `$${site.selfServicePrice}`,
     description:
-      "Everything you need to wash, rinse and dry your own dog — stocked, sanitised and waiting.",
+      "Raised tubs, shampoo, dryers, and aprons — stocked and ready when you walk in.",
     image: photos.selfServiceCorgi,
     alt: "A Pembroke Welsh Corgi being rinsed during a self-service wash",
     href: "/services#self-service",
@@ -42,8 +42,7 @@ export function ServicesPreview() {
               Two ways to get your dog clean
             </h2>
             <p className="mt-4 max-w-prose text-[18px] leading-relaxed text-charcoal/75">
-              Roll up your sleeves in our wash room, or book a groom and let us handle every last
-              tangle. Either way, your dog leaves feeling brand new.
+              Use the wash room yourself, or book a groom and leave it with us.
             </p>
           </div>
           <ButtonLink href="/services" variant="greenOutline" className="shrink-0">

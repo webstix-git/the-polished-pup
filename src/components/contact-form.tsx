@@ -34,7 +34,7 @@ function validate(fields: Fields): Errors {
   }
 
   if (fields.message.trim().length < 10) {
-    errors.message = "A sentence or two about your dog helps us reply properly.";
+    errors.message = "A few details about your dog help us reply.";
   }
 
   return errors;
@@ -96,10 +96,9 @@ export function ContactForm() {
         className="flex flex-col items-start gap-4 rounded-2xl border border-gold/40 bg-white p-8 shadow-soft"
       >
         <CheckCircle2 className="h-9 w-9 text-forest" aria-hidden="true" strokeWidth={1.5} />
-        <h3 className="font-display text-2xl font-semibold text-deep">Message sent</h3>
+        <h3 className="font-display text-2xl font-semibold text-deep">Got it — thanks</h3>
         <p className="text-charcoal/75">
-          Thank you for reaching out. We usually reply within one business day &mdash; if it is
-          urgent, give us a call and we will pick up.
+          We usually get back within one business day. If you need us sooner, give us a call.
         </p>
         <Button type="button" variant="greenOutline" onClick={() => setStatus("idle")}>
           Send another message
@@ -200,7 +199,7 @@ export function ContactForm() {
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? `${formId}-message-error` : undefined}
           className={cn("mt-2 resize-y", fieldClasses(Boolean(errors.message)))}
-          placeholder="Tell us about your dog — breed, coat, temperament — and what you're looking for."
+          placeholder="Breed, what you need, and anything we should know about your dog."
         />
         {errors.message ? (
           <p id={`${formId}-message-error`} className="mt-2 flex items-center gap-2 text-[18px] text-red-700">
@@ -213,7 +212,7 @@ export function ContactForm() {
       {status === "error" ? (
         <p role="alert" className="flex items-start gap-2 rounded-xl border border-red-300 bg-red-50 p-4 text-[18px] text-red-800">
           <TriangleAlert className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
-          Something went wrong sending your message. Please try again, or call us directly.
+          Something went wrong. Try again, or call us.
         </p>
       ) : null}
 

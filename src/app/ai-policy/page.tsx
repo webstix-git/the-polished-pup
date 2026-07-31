@@ -24,36 +24,34 @@ export default function AiPolicyPage() {
       <LegalPageShell
         eyebrow="AI Policy"
         title="How we use AI"
-        lede="A clear statement of where artificial intelligence may support our website and business — and where people remain responsible."
+        lede="Where AI might help behind the scenes — and where people still make the calls."
       >
         <p>Last updated: July 30, 2026</p>
 
         <h2>Our approach</h2>
         <p>
-          {site.name} may use AI-assisted tools to draft website copy, organize information, or
-          improve internal workflows. Final decisions about services, pricing, and customer care
-          remain with our team.
+          {site.name} may use AI tools to draft website text, organize notes, or speed up internal
+          work. Pricing, services, and how we treat your dog are still decided by our team.
         </p>
 
         <h2>Where AI may be used</h2>
         <ul>
-          <li>Drafting or refining website text and layout ideas</li>
-          <li>Helping staff summarize messages or prepare replies (reviewed before sending)</li>
-          <li>Supporting analytics and content structure</li>
+          <li>Drafting or editing website text and layout ideas</li>
+          <li>Helping staff draft replies (we review before anything is sent)</li>
+          <li>Basic analytics and content organization</li>
         </ul>
 
         <h2>Where AI is not used</h2>
         <ul>
-          <li>Making medical or veterinary decisions about pets</li>
-          <li>Automatically approving bookings without human confirmation when required</li>
-          <li>Selling customer data to train unrelated third-party AI products</li>
+          <li>Making veterinary or medical decisions about pets</li>
+          <li>Confirming bookings on its own when a person needs to approve them</li>
+          <li>Selling your data to train unrelated third-party AI products</li>
         </ul>
 
         <h2>Human oversight</h2>
         <p>
-          Content published on this site and responses to customer inquiries are reviewed by people
-          at {site.name}. If AI helps draft material, we are responsible for what we publish and
-          send.
+          What goes on this site and what we send customers is checked by people at {site.name}. If
+          AI helps draft something, we are still responsible for it.
         </p>
 
         <h2>Questions</h2>

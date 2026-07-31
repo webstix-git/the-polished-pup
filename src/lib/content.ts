@@ -41,67 +41,64 @@ export type ServiceItem = {
 };
 
 export const selfServiceFeatures = [
-  "Raised, back-friendly tubs sized for every breed",
-  "Quality shampoos and conditioners on tap",
-  "Professional high-velocity dryers",
-  "Brushes, combs, towels and aprons provided",
+  "Raised tubs that are easier on your back",
+  "Shampoo and conditioner ready to use",
+  "High-velocity dryers",
+  "Brushes, combs, towels, and aprons included",
   "Up to two dogs per visit",
-  "We clean the station — you head home dry",
+  "We clean the station when you're done",
 ];
 
 export const fullServiceItems: ServiceItem[] = [
   {
     title: "Full-Service Grooming",
     description:
-      "A complete groom shaped around your dog's coat, breed and comfort — bath, cut, style and finish.",
+      "Bath, cut, style, and finish — matched to your dog's coat, breed, and how they handle the table.",
     icon: "Scissors",
   },
   {
     title: "Bath & Brush",
     description:
-      "A thorough wash, blow-out and brush-through that leaves the coat soft, clean and tangle-free.",
+      "A solid wash, blow-dry, and brush-out so the coat comes out clean and free of mats.",
     icon: "Brush",
   },
   {
     title: "Nail Trimming",
-    description:
-      "Careful, unhurried trims and filing to keep paws comfortable and posture healthy.",
+    description: "Steady trims and a light file so nails stay comfortable between visits.",
     icon: "PawPrint",
   },
   {
     title: "Ear Cleaning",
-    description:
-      "Gentle cleaning and inspection to keep ears fresh and help head off irritation.",
+    description: "A careful clean and check to keep ears comfortable and free of buildup.",
     icon: "Stethoscope",
   },
   {
     title: "Teeth Brushing",
-    description:
-      "A pet-safe brushing that freshens breath and supports a healthy daily routine at home.",
+    description: "Pet-safe brushing to freshen breath and support the care you do at home.",
     icon: "Toothbrush",
   },
   {
     title: "De-Shedding Treatments",
     description:
-      "Undercoat work that lifts loose hair before it reaches your couch, car and clothes.",
+      "Undercoat work that pulls loose hair before it ends up on your couch and car seats.",
     icon: "Wind",
   },
   {
     title: "Puppy Grooming",
     description:
-      "A patient first experience built on short sessions, gentle handling and lots of reassurance.",
+      "Short, patient first visits so a young dog learns the shop is a safe place.",
     icon: "Dog",
   },
   {
     title: "Senior Dog Grooming",
     description:
-      "Slower, low-stress sessions with extra breaks and support for older joints and sensitive skin.",
+      "Slower sessions with extra breaks for older joints, thinner skin, and lower stamina.",
     icon: "ShieldCheck",
   },
   {
     title: "Spa Treatments",
     description:
-      "Conditioning soaks, skin-soothing add-ons and finishing touches for a truly polished pup.",
+      "Conditioning soaks and skin-friendly add-ons when you want a little extra finish.",
     icon: "Spa",
   },
 ];
@@ -110,25 +107,25 @@ export const usps = [
   {
     title: "The Area's Only Self-Service Wash",
     description:
-      "Skip the mess at home. Professional-grade tubs, tools and dryers, ready when you are.",
+      "No bathtub cleanup at home. Use our tubs, shampoo, and dryers — then walk out with a clean dog.",
     icon: "UspSelfService",
   },
   {
-    title: "Calm, Compassionate Care",
+    title: "Patient Grooming",
     description:
-      "Personalized attention for every dog, tailored to their temperament and needs.",
+      "We take our time with each dog. If they need a slower pace, that's what they get.",
     icon: "UspCare",
   },
   {
-    title: "Clean & Welcoming",
+    title: "Clean Shop, Clear Space",
     description:
-      "A bright, safe space designed to keep pets relaxed and owners at ease.",
+      "Stations stay stocked and wiped down. You shouldn't have to hunt for what you need.",
     icon: "UspClean",
   },
   {
-    title: "Rooted in South Haven",
+    title: "Right on Blue Star Highway",
     description:
-      "Built for neighbours and lake-town visitors alike, right on Blue Star Highway.",
+      "Easy stop for South Haven neighbors and weekend visitors heading in from the lake.",
     icon: "UspSouthHaven",
   },
 ];
@@ -137,19 +134,19 @@ export const values = [
   {
     title: "Community First",
     description:
-      "We opened because South Haven needed this. Every decision still starts with what our neighbours actually need.",
+      "We opened because South Haven needed a self-service wash. That still guides how we run the shop.",
     icon: "AboutCommunity",
   },
   {
     title: "Everyone Welcome",
     description:
-      "Year-round locals, weekend visitors, first-time puppies and grey-muzzled regulars — all of them belong here.",
+      "Year-round locals, weekend visitors, first-time puppies, and older dogs — if you're here, you belong.",
     icon: "AboutWelcome",
   },
   {
-    title: "Compassionate Care",
+    title: "Care Without Rushing",
     description:
-      "We work at each animal's pace. No rushing, no wrestling, no shortcuts around a dog's comfort.",
+      "We work at your dog's pace. No forcing, no shortcuts that leave them stressed.",
     icon: "AboutCare",
   },
 ];
@@ -311,20 +308,21 @@ export const faqs = [
   {
     question: "Do I need an appointment for the self-service wash?",
     answer:
-      "Walk in whenever it suits you. Stations are first come, first served, and weekday mornings are usually the quietest.",
+      "No. Walk in when it works for you. Stations are first come, first served — weekday mornings are usually quieter.",
   },
   {
     question: "What does the $25 self-service wash include?",
     answer:
-      "Up to two dogs, a raised tub, shampoo and conditioner, a professional dryer, brushes, towels and an apron. We handle the cleanup afterwards.",
+      "Up to two dogs, a raised tub, shampoo and conditioner, a dryer, brushes, towels, and an apron. We clean up after you're done.",
   },
   {
     question: "Do you groom cats?",
-    answer: "We do. Our groomers work with both dogs and cats — call ahead so we can plan a calm slot.",
+    answer:
+      "Yes. Call ahead so we can set aside a quieter time for them.",
   },
   {
     question: "Is my nervous or senior dog a good fit?",
     answer:
-      "Absolutely. Tell us what your dog finds difficult and we will slow the session down, add breaks and adapt the handling.",
+      "Yes. Tell us what throws them off and we'll slow down, add breaks, and adjust how we work.",
   },
 ];

@@ -14,7 +14,7 @@ const serviceCards = [
     title: "Full-Service Grooming",
     price: "By appointment",
     description:
-      "Hand off the leash and let our groomers give your dog patient, one-on-one attention — bath, cut, style, and finish.",
+      "Drop your dog with us for a bath, cut, and finish. We work one dog at a time — no assembly line.",
     image: photos.fullGroomingYorkie,
     alt: "A Yorkshire Terrier being groomed with a comb and scissors at The Polished Pup",
     href: "/services#full-service",
@@ -23,7 +23,7 @@ const serviceCards = [
     title: "Self-Service Wash",
     price: `$${site.selfServicePrice}`,
     description:
-      "Raised tubs, shampoos, dryers, and aprons for up to two dogs — stocked and ready when you want to do it yourself.",
+      "Raised tubs, shampoo, dryers, and aprons for up to two dogs. Everything's ready when you walk in.",
     image: photos.selfServiceCorgi,
     alt: "A Pembroke Welsh Corgi being rinsed during a self-service wash",
     href: "/services#self-service",
@@ -37,13 +37,11 @@ export function SelfServiceHighlight() {
         <Reveal className="w-full max-w-full sm:max-w-[80%]">
           <Eyebrow>What We Offer</Eyebrow>
           <h2 className="mt-5 text-[1.85rem] font-semibold leading-[1.12] text-deep sm:text-display-sm sm:text-[2.75rem] sm:leading-[1.08]">
-            Professional Grooming or Self-Service, You Choose
+            Grooming by appointment. Self-wash when you walk in.
           </h2>
           <p className="mt-4 max-w-prose text-[18px] leading-relaxed text-charcoal/75">
-            Whether you want our experienced groomers to take care of everything or prefer to wash
-            your dog yourself, we&rsquo;ve got you covered. From full-service grooming to fully
-            equipped self-service wash stations, we make it easy to keep your pet looking and
-            feeling their best.
+            Need a full groom? Book with us. Prefer to wash your own dog? Our stations are set up
+            with tubs, shampoo, and dryers so you can get it done without the mess at home.
           </p>
         </Reveal>
 

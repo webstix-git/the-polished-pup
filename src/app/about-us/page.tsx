@@ -16,7 +16,7 @@ import { address, site } from "@/lib/site";
 export const metadata = pageMetadata({
   title: "About Our South Haven Dog Wash & Grooming Spa",
   description:
-    "The Polished Pup opened to fill a gap in South Haven — full-service grooming and spa care, plus the area's only self-service wash, for locals and visitors alike.",
+    "How The Polished Pup got started in South Haven — full-service grooming and the area's only self-service dog wash.",
   path: "/about-us",
 });
 
@@ -36,8 +36,8 @@ export default function AboutPage() {
 
       <PageHero
         eyebrow="About Us"
-        title="A neighbourhood wash room with a grooming spa attached"
-        lede="We are a small South Haven business built around one belief: caring for your dog should feel easy, unhurried and genuinely welcoming — for both of you."
+        title="A neighborhood wash room with grooming on the side"
+        lede="We're a small South Haven shop. Getting your dog clean should be straightforward — and a little easier than doing it in your bathtub."
       />
 
       <Section tone="cream" className="bg-grain">
@@ -46,25 +46,23 @@ export default function AboutPage() {
             <Reveal>
               <Eyebrow>How it started</Eyebrow>
               <h2 className="mt-5 text-display-sm font-semibold text-deep sm:text-[2.6rem] sm:leading-[1.1]">
-                It began with a gap nobody had filled
+                It started with a missing wash room
               </h2>
 
               <div className="mt-6 space-y-5 text-[18px] leading-relaxed text-charcoal/75">
                 <p>
-                  The Polished Pup started with a simple observation &mdash; Southwest Michigan had
-                  nowhere to wash your own dog. We figured if we needed it, our neighbours probably
-                  did too.
+                  Southwest Michigan had nowhere to wash your own dog. We needed that option, and
+                  figured our neighbors did too.
                 </p>
                 <p>
-                  So we built a place where locals and visitors alike feel like it was made just for
-                  them. Raised tubs instead of sore backs. Professional dryers instead of a hallway
-                  full of wet fur. Someone on hand who is glad to see your dog, whether it is a
-                  puppy on its first bath or a fourteen-year-old who needs the water a little
+                  So we built it: raised tubs instead of sore backs, real dryers instead of a wet
+                  hallway, and someone here who&rsquo;s happy to see your dog — whether it&rsquo;s
+                  a puppy&rsquo;s first bath or a fourteen-year-old who likes the water a little
                   warmer.
                 </p>
                 <p>
-                  Today that same room serves weekend visitors down from the lake and regulars who
-                  come in every other Saturday. Both get the same welcome.
+                  Now that same room sees weekend visitors from the lake and regulars who come in
+                  every other Saturday. Same welcome either way.
                 </p>
               </div>
 
@@ -95,7 +93,7 @@ export default function AboutPage() {
           <Reveal className="max-w-2xl">
             <Eyebrow tone="light">What we stand for</Eyebrow>
             <h2 className="mt-5 text-display-sm font-semibold sm:text-[2.6rem] sm:leading-[1.1]">
-              Three things we refuse to rush
+              How we run the shop
             </h2>
           </Reveal>
 
@@ -124,8 +122,8 @@ export default function AboutPage() {
               Pet Friendly Places and Beach Cam
             </h2>
             <p className="mt-4 max-w-prose text-[18px] leading-relaxed text-charcoal/75">
-              Planning a day in South Haven with your dog? These local spots make it easier —
-              from beaches and dining to the live beach cam.
+              In town with your dog? These local links help with lodging, parks, dining, and a live
+              look at the beach.
             </p>
           </Reveal>
 
@@ -142,7 +140,7 @@ export default function AboutPage() {
                     {place.title}
                   </span>
                   <span className="inline-flex items-center gap-1.5 text-[15px] font-medium text-forest">
-                    Visit link
+                    Visit site
                     <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
                   </span>
                 </a>

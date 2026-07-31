@@ -9,7 +9,7 @@ import { UspStrip } from "@/components/home/usp-strip";
 export const metadata = pageMetadata({
   title: "Full-Service Grooming & Self-Service Dog Wash in South Haven, MI",
   description:
-    "The Polished Pup offers full-service grooming and spa care alongside Southwest Michigan's only self-service dog wash — $25 for up to two dogs — in South Haven, MI.",
+    "Full-service grooming and Southwest Michigan's only self-service dog wash — $25 for up to two dogs — in South Haven, MI.",
   path: "/",
 });
 

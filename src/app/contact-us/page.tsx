@@ -14,7 +14,7 @@ import { address, contact, hours, hoursNotes, socials } from "@/lib/site";
 export const metadata = pageMetadata({
   title: "Contact & Directions in South Haven, MI",
   description:
-    "Visit The Polished Pup at 352 Blue Star Highway, South Haven, MI 49090. Call (269) 767-8725 for full-service grooming or self-service wash questions.",
+    "Find The Polished Pup at 352 Blue Star Highway, South Haven, MI 49090. Call (269) 767-8725 for grooming appointments or self-service wash questions.",
   path: "/contact-us",
 });
 
@@ -45,16 +45,16 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact Us"
         title="Come say hello on Blue Star Highway"
-        lede="Questions about full-service grooming, a nervous pup, or the self-service wash? Call, email, or send a note — a real person reads every message."
+        lede="Questions about a groom, a nervous dog, or the self-service wash? Call, email, or use the form — we read every message ourselves."
       />
 
       <Section tone="cream" className="bg-grain">
         <Container width="wide">
           <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
             <Reveal>
-              <Eyebrow>Business details</Eyebrow>
+              <Eyebrow>Visit &amp; reach us</Eyebrow>
               <h2 className="mt-5 font-display text-display-sm font-semibold text-deep">
-                Find us, call us, write to us
+                Hours, phone, and directions
               </h2>
 
               <dl className="mt-9 space-y-7">
@@ -130,7 +130,7 @@ export default function ContactPage() {
 
               <div className="mt-10">
                 <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-forest">
-                  Follow along
+                  Follow us
                 </h3>
                 <div className="mt-4 flex flex-wrap gap-3">
                   <a
@@ -192,7 +192,7 @@ export default function ContactPage() {
           <Reveal>
             <Eyebrow>Common questions</Eyebrow>
             <h2 className="mt-5 font-display text-display-sm font-semibold text-deep">
-              Before you get in touch
+              Quick answers
             </h2>
           </Reveal>
 

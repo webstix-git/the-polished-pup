@@ -25,8 +25,8 @@ export default function SitemapPage() {
       />
       <LegalPageShell
         eyebrow="Sitemap"
-        title="Find your way around"
-        lede={`A simple map of every public page on ${site.name}.`}
+        title="Site map"
+        lede={`Every public page on ${site.name}.`}
       >
         <h2>Main pages</h2>
         <ul>

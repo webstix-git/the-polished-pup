@@ -80,7 +80,7 @@ export function localBusinessJsonLd() {
         "@type": "Offer",
         name: "Self-Service Dog Wash",
         description:
-          "Raised tubs, shampoos, professional dryers, brushes and aprons for up to two dogs per visit.",
+          "Raised tubs, shampoo, dryers, brushes, and aprons for up to two dogs per visit.",
         price: String(site.selfServicePrice),
         priceCurrency: "USD",
       },
@@ -88,7 +88,7 @@ export function localBusinessJsonLd() {
         "@type": "Offer",
         name: "Full-Service Grooming & Spa",
         description:
-          "Full grooms, bath and brush, nail trims, ear cleaning, teeth brushing, de-shedding and spa treatments for dogs and cats.",
+          "Full grooms, bath and brush, nail trims, ear cleaning, teeth brushing, de-shedding, and spa add-ons for dogs and cats.",
       },
     ],
   };

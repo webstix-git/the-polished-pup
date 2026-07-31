@@ -11,23 +11,23 @@ export const metadata = pageMetadata({
 const indexItems = [
   {
     title: "Customer communication",
-    body: "Inquiries by phone, email, and web form are handled by staff. AI may assist with drafting, but replies are reviewed before they go out.",
+    body: "Phone, email, and form messages are handled by our staff. AI may help draft a reply; a person reviews it before it goes out.",
   },
   {
     title: "Website content",
-    body: "Public pages describing services, hours, and location are maintained by the business. AI tools may support drafting; published details are verified locally.",
+    body: "Services, hours, and location on this site are maintained by the business. AI may help with drafts; we check the details before publishing.",
   },
   {
     title: "Scheduling & services",
-    body: "Self-service wash access and grooming appointments follow our in-shop process. AI does not automatically book or cancel visits without human involvement.",
+    body: "Self-service wash and grooming appointments run through our normal shop process. AI does not book or cancel visits on its own.",
   },
   {
     title: "Privacy & data",
-    body: "Contact details shared with us are used for service and communication. See our Privacy Policy for collection and use practices.",
+    body: "Contact details you share are used to help you and run the business. See our Privacy Policy for more.",
   },
   {
     title: "Transparency",
-    body: "This index and our AI Policy explain where automation may help and where people remain accountable.",
+    body: "This page and our AI Policy spell out where tools may help and where people stay in charge.",
   },
 ];
 
@@ -46,8 +46,8 @@ export default function AiReadinessServiceIndexPage() {
       />
       <LegalPageShell
         eyebrow="AI Readiness Service Index"
-        title="Service readiness at a glance"
-        lede={`How ${site.name} approaches AI-assisted tools across the ways we serve pet owners online and in the shop.`}
+        title="Where AI fits in our work"
+        lede={`A plain look at how ${site.name} uses AI-assisted tools — and where it does not.`}
       >
         <p>Last updated: July 30, 2026</p>
 

@@ -23,8 +23,8 @@ export default function PrivacyPolicyPage() {
       />
       <LegalPageShell
         eyebrow="Privacy Policy"
-        title="Your privacy matters"
-        lede="This policy explains what information we collect when you use our website or contact us, and how we use it."
+        title="How we handle your information"
+        lede="What we collect when you use this site or get in touch, and what we do with it."
       >
         <p>Last updated: July 30, 2026</p>
 
@@ -44,9 +44,9 @@ export default function PrivacyPolicyPage() {
 
         <h2>How we use information</h2>
         <ul>
-          <li>To respond to inquiries and schedule services</li>
-          <li>To improve our website and customer experience</li>
-          <li>To communicate updates or promotions if you have asked to hear from us</li>
+          <li>To answer questions and schedule services</li>
+          <li>To keep the website working and understand which pages get used</li>
+          <li>To send updates or promotions only if you asked for them</li>
         </ul>
 
         <h2>Cookies</h2>

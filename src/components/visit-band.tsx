@@ -53,17 +53,17 @@ export function VisitBand({ media = "photo" }: { media?: "map" | "photo" }) {
             <div className="relative flex min-h-[24rem] items-end px-5 py-10 sm:min-h-[28rem] sm:items-center sm:px-12 sm:py-14 lg:min-h-[32rem] lg:px-16 lg:py-16">
               <div className="max-w-xl text-cream">
                 <p className="inline-flex items-center rounded-full border border-cream/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-cream">
-                  Ready to book?
+                  Ready when you are
                 </p>
 
                 <h2 className="mt-5 text-[1.85rem] font-semibold leading-[1.1] sm:mt-6 sm:text-display-sm sm:leading-[1.08] md:text-[2.6rem]">
-                  Let&rsquo;s get your pup looking{" "}
-                  <span className="text-gold-light">polished</span>
+                  Bring your pup in for a{" "}
+                  <span className="text-gold-light">wash or a groom</span>
                 </h2>
 
                 <p className="mt-4 max-w-md text-[17px] leading-relaxed text-cream/85 sm:mt-5 sm:text-[18px]">
-                  Walk in for a self-service wash, or call ahead to schedule a full-service groom.
-                  We&rsquo;ll take good care of your dog either way.
+                  Walk in for the self-service wash, or call to book a full-service appointment.
+                  We&rsquo;ll take care of your dog either way.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:gap-4">

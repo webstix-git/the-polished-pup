@@ -17,11 +17,11 @@ export function SiteFooter() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Logo variant="footer" tone="light" href="/" />
             <p className="mt-6 max-w-sm text-[16px] leading-relaxed text-cream/75">
-              Full-service grooming and self-service washing for dogs and cats in South Haven,
-              Michigan. Locals and visitors welcome.
+              Dog and cat grooming by appointment, plus a self-service wash, in South Haven,
+              Michigan.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-3">
-              <p className="text-[16px] font-medium text-cream">Follow Us On:</p>
+              <p className="text-[16px] font-medium text-cream">Follow us</p>
               <div className="flex items-center gap-3">
                 <a
                   href={socials.facebook}

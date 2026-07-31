@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Cat, PawPrint, Star } from "lucide-react";
+import { ArrowRight, Check, Cat, PawPrint } from "lucide-react";
 
 import { PageHero } from "@/components/page-hero";
 import { VisitBand } from "@/components/visit-band";
@@ -16,7 +16,7 @@ import { contact, site } from "@/lib/site";
 export const metadata = pageMetadata({
   title: "Full-Service Grooming & $25 Self-Service Wash",
   description:
-    "Full-service dog and cat grooming, bath and brush, nail trims, de-shedding and spa treatments — plus a $25 self-service wash for up to two dogs — in South Haven, Michigan.",
+    "Dog and cat grooming by appointment, plus a $25 self-service wash for up to two dogs, at The Polished Pup in South Haven, Michigan.",
   path: "/services",
 });
 
@@ -37,7 +37,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Wash it yourself, or leave it with us"
-        lede="Full-service grooming and spa care, and a stocked self-service wash room for $25 — two clear options under one roof in South Haven."
+        lede="Self-service wash stations for $25, or full-service grooming by appointment — both in our South Haven shop."
       >
         <ButtonLink href="#full-service" variant="gold" size="lg">
           Full-service grooming
@@ -63,13 +63,7 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="absolute bottom-0 left-4 z-10 max-w-[11.5rem] rounded-2xl border border-gold/45 bg-deep px-5 py-4 shadow-lifted sm:left-6 sm:max-w-[12.5rem] sm:px-6 sm:py-5">
-                  <Star
-                    className="h-4 w-4 text-gold"
-                    aria-hidden="true"
-                    strokeWidth={1.6}
-                    fill="currentColor"
-                  />
-                  <p className="mt-2 text-[18px] font-semibold leading-snug text-cream">
+                  <p className="mt-0 text-[18px] font-semibold leading-snug text-cream">
                     <span className="block text-gold-light">${site.selfServicePrice}</span>
                     flat rate &middot; up to two dogs
                   </p>
@@ -78,15 +72,14 @@ export default function ServicesPage() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <Eyebrow>Tier One</Eyebrow>
+              <Eyebrow>Self-Service</Eyebrow>
               <h2 className="mt-5 font-display text-display-sm font-semibold text-deep sm:text-[2.75rem] sm:leading-[1.08]">
-                Self-Service Grooming
+                Self-Service Wash
               </h2>
 
               <p className="mt-5 max-w-prose text-[18px] leading-relaxed text-charcoal/75">
-                Everything you need to wash, rinse and dry your dog &mdash; up to two pups per
-                visit. Our stations are stocked and sanitised, so you skip the setup and the
-                scrubbing of your own tub afterward.
+                Wash, rinse, and dry up to two dogs in one visit. Stations come stocked, and we
+                clean up when you&rsquo;re finished — no scrubbing your own tub at home.
               </p>
 
               <ul className="mt-9 grid gap-3 sm:grid-cols-2">
@@ -109,13 +102,13 @@ export default function ServicesPage() {
         <Container width="wide">
           <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
             <Reveal>
-              <Eyebrow tone="light">Tier Two</Eyebrow>
+              <Eyebrow tone="light">Full-Service</Eyebrow>
               <h2 className="mt-5 font-display text-display-sm font-semibold sm:text-[2.75rem] sm:leading-[1.08]">
                 Full-Service Grooming &amp; Spa
               </h2>
               <p className="mt-5 max-w-prose text-[18px] leading-relaxed text-cream/80">
-                Prefer to hand off the leash? Our groomers give every dog patient, one-on-one
-                attention.
+                Prefer not to do it yourself? Book a groom and we&rsquo;ll take it from there —
+                one dog at a time, at their pace.
               </p>
             </Reveal>
 
@@ -154,9 +147,9 @@ export default function ServicesPage() {
                   <Cat className="h-5 w-5" aria-hidden="true" strokeWidth={1.6} />
                 </span>
                 <span className="text-base leading-relaxed">
-                  <span className="font-semibold">We groom both dogs and cats.</span>{" "}
+                  <span className="font-semibold">We groom dogs and cats.</span>{" "}
                   <span className="text-cream/75">
-                    Call ahead and we&rsquo;ll plan a calm, well-timed slot.
+                    Call ahead so we can pick a quieter time.
                   </span>
                 </span>
               </p>
@@ -182,19 +175,19 @@ export default function ServicesPage() {
             {[
               {
                 title: "No appointment for the wash room",
-                body: "Self-service stations are first come, first served. Weekday mornings are usually the quietest.",
+                body: "Self-service is walk-in. First come, first served. Weekday mornings are usually quieter.",
               },
               {
-                title: "Bring a leash and a towel-friendly dog",
-                body: "We supply towels, aprons, shampoo and dryers. You only need to bring the pup.",
+                title: "Bring your dog on a leash",
+                body: "We provide towels, aprons, shampoo, and dryers. You bring the dog.",
               },
               {
                 title: "Nervous or senior dogs are welcome",
-                body: "Tell us what your dog finds difficult and we'll slow the session down and add breaks.",
+                body: "Tell us what sets them off and we'll slow down and build in breaks.",
               },
               {
-                title: "Grooming runs by appointment",
-                body: "Call or send a message and we'll find a time that suits your dog's routine.",
+                title: "Grooming is by appointment",
+                body: "Call or send a message and we'll find a time that works.",
               },
             ].map((item) => (
               <StaggerItem as="li" key={item.title}>
