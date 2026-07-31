@@ -28,7 +28,7 @@ export function AboutTeaser() {
               them: warm, unhurried and genuinely happy to see your dog walk through the door.
             </p>
             <div className="mt-9">
-              <ButtonLink href="/about" variant="gold" size="lg">
+              <ButtonLink href="/about-us" variant="gold" size="lg">
                 Read our story
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </ButtonLink>

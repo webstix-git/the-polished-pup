@@ -74,9 +74,9 @@ export const socials = {
 export const navigation = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
+  { label: "About Us", href: "/about-us" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact Us", href: "/contact-us" },
 ] as const;
 
 export const legalLinks = [

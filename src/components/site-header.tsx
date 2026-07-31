@@ -133,7 +133,7 @@ export function SiteHeader() {
                 {contact.phone}
               </ButtonLink>
               <ButtonLink
-                href="/contact"
+                href="/contact-us"
                 variant="goldOutline"
                 size="lg"
                 className="w-full text-gold-light"

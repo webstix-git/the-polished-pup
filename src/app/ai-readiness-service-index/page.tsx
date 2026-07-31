@@ -67,7 +67,7 @@ export default function AiReadinessServiceIndexPage() {
             <a href="/privacy-policy">Privacy Policy</a>
           </li>
           <li>
-            <a href="/contact">Contact</a>
+            <a href="/contact-us">Contact Us</a>
           </li>
         </ul>
 

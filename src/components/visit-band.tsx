@@ -77,7 +77,7 @@ export function VisitBand({ media = "photo" }: { media?: "map" | "photo" }) {
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </ButtonLink>
                   <ButtonLink
-                    href="/contact"
+                    href="/contact-us"
                     variant="goldOutline"
                     size="lg"
                     className="w-full border-cream/50 text-cream hover:border-gold hover:bg-gold hover:text-deep sm:w-auto"

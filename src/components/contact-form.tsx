@@ -217,7 +217,7 @@ export function ContactForm() {
         </p>
       ) : null}
 
-      <div className="flex flex-wrap items-center gap-4 pt-2">
+      <div className="pt-2">
         <Button type="submit" variant="green" size="lg" disabled={status === "submitting"}>
           {status === "submitting" ? (
             <>
@@ -231,7 +231,6 @@ export function ContactForm() {
             </>
           )}
         </Button>
-        <p className="text-[18px] text-charcoal/60">We reply within one business day.</p>
       </div>
     </form>
   );

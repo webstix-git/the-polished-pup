@@ -17,13 +17,13 @@ export const metadata = pageMetadata({
   title: "About Our South Haven Dog Wash & Grooming Spa",
   description:
     "The Polished Pup opened to fill a gap in South Haven — full-service grooming and spa care, plus the area's only self-service wash, for locals and visitors alike.",
-  path: "/about",
+  path: "/about-us",
 });
 
 export default function AboutPage() {
   const jsonLd = breadcrumbJsonLd([
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
+    { name: "About Us", path: "/about-us" },
   ]);
 
   return (

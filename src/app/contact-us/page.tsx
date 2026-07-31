@@ -15,13 +15,13 @@ export const metadata = pageMetadata({
   title: "Contact & Directions in South Haven, MI",
   description:
     "Visit The Polished Pup at 352 Blue Star Highway, South Haven, MI 49090. Call (269) 767-8725 for full-service grooming or self-service wash questions.",
-  path: "/contact",
+  path: "/contact-us",
 });
 
 export default function ContactPage() {
   const jsonLd = breadcrumbJsonLd([
     { name: "Home", path: "/" },
-    { name: "Contact", path: "/contact" },
+    { name: "Contact Us", path: "/contact-us" },
   ]);
 
   const faqJsonLd = {
@@ -43,7 +43,7 @@ export default function ContactPage() {
       />
 
       <PageHero
-        eyebrow="Contact"
+        eyebrow="Contact Us"
         title="Come say hello on Blue Star Highway"
         lede="Questions about full-service grooming, a nervous pup, or the self-service wash? Call, email, or send a note — a real person reads every message."
       />
