@@ -1,0 +1,27 @@
+import { AboutTeaser } from "@/components/home/about-teaser";
+import { GalleryPreview } from "@/components/home/gallery-preview";
+import { HomeHero } from "@/components/home/hero";
+import { SelfServiceHighlight } from "@/components/home/self-service";
+import { VisitBand } from "@/components/visit-band";
+import { pageMetadata } from "@/lib/seo";
+import { UspStrip } from "@/components/home/usp-strip";
+
+export const metadata = pageMetadata({
+  title: "Full-Service Grooming & Self-Service Dog Wash in South Haven, MI",
+  description:
+    "The Polished Pup offers full-service grooming and spa care alongside Southwest Michigan's only self-service dog wash — $25 for up to two dogs — in South Haven, MI.",
+  path: "/",
+});
+
+export default function HomePage() {
+  return (
+    <>
+      <HomeHero />
+      <SelfServiceHighlight />
+      <AboutTeaser />
+      <UspStrip />
+      <GalleryPreview />
+      <VisitBand media="photo" />
+    </>
+  );
+}
