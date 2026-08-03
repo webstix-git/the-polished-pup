@@ -212,7 +212,6 @@ export function ContactForm() {
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? `${formId}-message-error` : undefined}
           className={cn("mt-2 resize-y", fieldClasses(Boolean(errors.message)))}
-          placeholder="Breed, what you need, and anything we should know about your dog."
         />
         {errors.message ? (
           <p id={`${formId}-message-error`} className="mt-2 flex items-center gap-2 text-[18px] text-red-700">
