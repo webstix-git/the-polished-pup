@@ -196,7 +196,7 @@ export function SiteHeader() {
           : "border-b border-transparent bg-transparent",
       )}
     >
-      <Container width="wide">
+      <Container width="wide" className="min-[1130px]:max-[1279px]:pr-[52px]">
         <div
           className={cn(
             "flex items-center justify-between gap-3 transition-[height] duration-300 ease-gentle sm:gap-4",
@@ -213,8 +213,8 @@ export function SiteHeader() {
           />
 
           {/* 1130px–1279px: menu + call grouped on the right */}
-          <div className="hidden items-center gap-2 nav:flex xl:hidden">
-            <nav aria-label="Primary" className="flex items-center gap-0.5">
+          <div className="hidden items-center nav:flex xl:hidden">
+            <nav aria-label="Primary" className="flex items-center gap-0.5 pr-5">
               {navLinks(true)}
             </nav>
             <a href={contact.phoneHref} className={cn(phoneLinkClass, "text-[16px]")}>
