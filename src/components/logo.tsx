@@ -15,7 +15,7 @@ const variants = {
   header: {
     mark: "h-[52px] sm:h-[72px] lg:h-[100px] xl:h-[140px]",
     gap: "gap-2.5 sm:gap-3 lg:gap-3 xl:gap-4",
-    name: "text-[0.95rem] sm:text-xl lg:text-[1.35rem] xl:text-[1.7rem]",
+    name: "text-[0.95rem] sm:text-xl lg:text-[22px] xl:text-[22px]",
     sub: "text-[0.5rem] sm:text-[0.58rem] lg:text-[0.6rem] xl:text-[0.66rem] tracking-[0.28em] sm:tracking-[0.3em]",
   },
   headerCompact: {

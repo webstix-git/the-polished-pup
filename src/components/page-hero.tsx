@@ -44,15 +44,7 @@ export function PageHero({
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(27,67,50,0.94)_0%,rgba(27,67,50,0.88)_35%,rgba(27,67,50,0.78)_70%,rgba(27,67,50,0.82)_100%)] md:bg-[linear-gradient(90deg,#1b4332_0%,rgba(27,67,50,0.94)_36%,rgba(27,67,50,0.62)_55%,rgba(27,67,50,0.22)_74%,transparent_90%)]"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 hidden bg-[linear-gradient(to_bottom,rgba(27,67,50,0.92)_0%,rgba(27,67,50,0.72)_14%,rgba(27,67,50,0.35)_28%,transparent_48%)] md:block"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-deep/40 via-transparent to-transparent"
+          className="page-hero__overlay pointer-events-none absolute inset-0"
         />
 
         <Container width="wide" className="relative">
