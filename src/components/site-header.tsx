@@ -67,7 +67,7 @@ export function SiteHeader() {
         {menuOpen ? (
           <motion.div
             key="scrim"
-            className="fixed inset-0 z-[60] bg-charcoal/45 lg:hidden"
+            className="fixed inset-0 z-[60] bg-charcoal/45 xl:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -85,7 +85,7 @@ export function SiteHeader() {
             role="dialog"
             aria-modal="true"
             aria-label="Site menu"
-            className="fixed inset-y-0 right-0 z-[70] flex w-[min(92vw,22rem)] flex-col overflow-y-auto overscroll-contain bg-deep bg-bubbles-soft px-5 pb-10 pt-[max(1.25rem,env(safe-area-inset-top))] shadow-lifted sm:px-6 lg:hidden"
+            className="fixed inset-y-0 right-0 z-[70] flex w-[min(92vw,22rem)] flex-col overflow-y-auto overscroll-contain bg-deep bg-bubbles-soft px-5 pb-10 pt-[max(1.25rem,env(safe-area-inset-top))] shadow-lifted sm:px-6 xl:hidden"
             initial={{ x: reduceMotion ? 0 : "100%", opacity: reduceMotion ? 0 : 1 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: reduceMotion ? 0 : "100%", opacity: reduceMotion ? 0 : 1 }}
@@ -160,7 +160,7 @@ export function SiteHeader() {
         <div
           className={cn(
             "flex items-center justify-between gap-3 transition-[height] duration-300 ease-gentle sm:gap-4",
-            scrolled ? "h-[64px] sm:h-[72px] lg:h-[88px]" : "h-[72px] sm:h-[88px] lg:h-[148px]",
+            scrolled ? "h-[64px] sm:h-[72px] lg:h-[88px] xl:h-[96px]" : "h-[72px] sm:h-[88px] lg:h-[120px] xl:h-[168px]",
           )}
         >
           <Logo
@@ -172,7 +172,7 @@ export function SiteHeader() {
             className="min-w-0"
           />
 
-          <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
+          <nav aria-label="Primary" className="hidden items-center gap-0.5 xl:flex">
             {navigation.map((item) => {
               const active =
                 item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
@@ -183,7 +183,7 @@ export function SiteHeader() {
                   href={item.href}
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "relative rounded-full px-4 py-3 text-[18px] font-medium transition-colors duration-200",
+                    "relative rounded-full px-3 py-3 text-[17px] font-medium transition-colors duration-200 2xl:px-4 2xl:text-[18px]",
                     solid
                       ? "text-charcoal/80 hover:text-deep"
                       : "text-cream/85 hover:text-white",
@@ -194,7 +194,7 @@ export function SiteHeader() {
                   {active ? (
                     <span
                       aria-hidden="true"
-                      className="absolute inset-x-4 -bottom-0.5 h-px bg-gold"
+                      className="absolute inset-x-3 -bottom-0.5 h-px bg-gold 2xl:inset-x-4"
                     />
                   ) : null}
                 </Link>
@@ -205,7 +205,7 @@ export function SiteHeader() {
           <a
             href={contact.phoneHref}
             className={cn(
-              "link-underline hidden text-[18px] transition-colors lg:inline-flex",
+              "link-underline hidden text-[18px] font-bold transition-colors xl:inline-flex",
               solid ? "text-charcoal/80 hover:text-deep" : "text-cream/85 hover:text-white",
             )}
           >
@@ -221,7 +221,7 @@ export function SiteHeader() {
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             className={cn(
-              "inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-colors lg:hidden",
+              "inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-colors xl:hidden",
               solid
                 ? "border-deep/20 text-deep hover:bg-deep hover:text-cream"
                 : "border-cream/30 text-cream hover:bg-cream/10",

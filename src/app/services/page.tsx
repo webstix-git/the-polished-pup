@@ -140,8 +140,8 @@ export default function ServicesPage() {
           </Stagger>
 
           <Reveal delay={0.1}>
-            <div className="mt-12 flex flex-col gap-6 rounded-2xl border border-gold/35 bg-forest/30 p-7 sm:flex-row sm:items-center sm:justify-between sm:p-8">
-              <p className="flex items-center gap-4 text-cream">
+            <div className="mt-12 flex flex-col items-center justify-center gap-5 rounded-2xl border border-gold/35 bg-forest/30 p-7 text-center sm:flex-row sm:gap-6 sm:p-8 sm:text-left">
+              <p className="flex flex-col items-center gap-3 text-cream sm:flex-row sm:gap-4">
                 <span className="inline-flex shrink-0 items-center gap-1.5 text-gold">
                   <PawPrint className="h-5 w-5" aria-hidden="true" strokeWidth={1.6} />
                   <Cat className="h-5 w-5" aria-hidden="true" strokeWidth={1.6} />

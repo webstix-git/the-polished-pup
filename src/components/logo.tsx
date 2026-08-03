@@ -13,15 +13,15 @@ import { cn } from "@/lib/utils";
  */
 const variants = {
   header: {
-    mark: "h-[52px] sm:h-[72px] lg:h-[120px]",
-    gap: "gap-2.5 sm:gap-3 lg:gap-4",
-    name: "text-[0.95rem] sm:text-xl lg:text-[1.7rem]",
-    sub: "text-[0.5rem] sm:text-[0.58rem] lg:text-[0.66rem] tracking-[0.28em] sm:tracking-[0.3em]",
+    mark: "h-[52px] sm:h-[72px] lg:h-[100px] xl:h-[140px]",
+    gap: "gap-2.5 sm:gap-3 lg:gap-3 xl:gap-4",
+    name: "text-[0.95rem] sm:text-xl lg:text-[1.35rem] xl:text-[1.7rem]",
+    sub: "text-[0.5rem] sm:text-[0.58rem] lg:text-[0.6rem] xl:text-[0.66rem] tracking-[0.28em] sm:tracking-[0.3em]",
   },
   headerCompact: {
-    mark: "h-[44px] sm:h-[52px] lg:h-[64px]",
+    mark: "h-[44px] sm:h-[52px] lg:h-[56px] xl:h-[64px]",
     gap: "gap-2 sm:gap-2.5 lg:gap-3",
-    name: "text-sm sm:text-base lg:text-xl",
+    name: "text-sm sm:text-base lg:text-lg xl:text-xl",
     sub: "text-[0.48rem] sm:text-[0.55rem] lg:text-[0.58rem] tracking-[0.26em] sm:tracking-[0.28em]",
   },
   menu: {

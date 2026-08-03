@@ -10,6 +10,13 @@ type Payload = {
 const isNonEmptyString = (value: unknown, min: number) =>
   typeof value === "string" && value.trim().length >= min;
 
+function isValidUsPhone(value: unknown): boolean {
+  if (typeof value !== "string") return false;
+  const digits = value.replace(/\D/g, "");
+  const national = digits.length === 11 && digits.startsWith("1") ? digits.slice(1) : digits;
+  return national.length === 10;
+}
+
 export async function POST(request: Request) {
   let payload: Payload;
 
@@ -25,8 +32,8 @@ export async function POST(request: Request) {
     isNonEmptyString(name, 2) &&
     typeof email === "string" &&
     /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim()) &&
-    isNonEmptyString(message, 10) &&
-    (phone === undefined || typeof phone === "string");
+    isValidUsPhone(phone) &&
+    (message === undefined || typeof message === "string");
 
   if (!valid) {
     return NextResponse.json({ error: "Please check the form and try again." }, { status: 422 });

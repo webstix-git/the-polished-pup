@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 
 import { Photo } from "@/components/ui/photo";
 import { ButtonLink } from "@/components/ui/button";
@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Reveal } from "@/components/ui/reveal";
 import { photos } from "@/lib/content";
+import { contact } from "@/lib/site";
 
 export function HomeHero() {
   return (
@@ -27,9 +28,9 @@ export function HomeHero() {
 
       <Container
         width="wide"
-        className="relative flex min-h-[min(100svh,56rem)] items-end sm:items-center"
+        className="relative flex min-h-[min(100svh,56rem)] items-center"
       >
-        <Reveal className="w-full max-w-xl pb-14 pt-[96px] sm:pb-20 sm:pt-[132px] lg:max-w-2xl lg:pb-28 lg:pt-[168px]">
+        <Reveal className="w-full max-w-xl py-16 pt-[100px] sm:py-20 sm:pt-[120px] lg:max-w-2xl lg:py-28 lg:pt-[148px] xl:pt-[220px]">
           <Eyebrow tone="light">South Haven, Michigan</Eyebrow>
 
           <h1 className="mt-5 text-[2rem] font-semibold leading-[1.08] sm:mt-6 sm:text-display-sm sm:leading-[1.05] md:text-display-lg lg:text-display-xl">
@@ -42,10 +43,19 @@ export function HomeHero() {
             you&rsquo;d rather handle it yourself. Both under one roof in South Haven.
           </p>
 
-          <div className="mt-8 sm:mt-9">
+          <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:items-center">
             <ButtonLink href="/services" variant="gold" size="lg" className="w-full sm:w-auto">
               See our services
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+            </ButtonLink>
+            <ButtonLink
+              href={contact.phoneHref}
+              variant="goldOutline"
+              size="lg"
+              className="w-full border-cream/50 text-cream hover:border-gold hover:bg-gold hover:text-deep sm:w-auto xl:hidden"
+            >
+              <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
+              {contact.phone}
             </ButtonLink>
           </div>
         </Reveal>

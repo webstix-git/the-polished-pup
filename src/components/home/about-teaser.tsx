@@ -48,8 +48,8 @@ export function AboutTeaser() {
 
               <div className="absolute bottom-0 left-4 z-10 max-w-[12.5rem] rounded-2xl border border-deep/15 bg-gold px-5 py-4 shadow-lifted sm:left-6 sm:max-w-[13.5rem] sm:px-6 sm:py-5">
                 <p className="text-[17px] font-semibold leading-snug text-deep">
-                  <span className="block">For locals</span>
-                  and weekend visitors
+                  <span className="block">The area&rsquo;s only</span>
+                  self-service wash
                 </p>
               </div>
             </div>

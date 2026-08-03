@@ -1,4 +1,4 @@
-import { Clock, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Facebook, Instagram, Mail, MapPin, Phone, X } from "lucide-react";
 
 import { ContactForm } from "@/components/contact-form";
 import { PageHero } from "@/components/page-hero";
@@ -69,9 +69,12 @@ export default function ContactPage() {
                         href={address.mapsDirectionsUrl}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="link-underline"
+                        className="link-underline inline-block"
                       >
-                        {address.street}, {address.city}, {address.region} {address.postalCode}
+                        <span className="block">{address.street}</span>
+                        <span className="block">
+                          {address.city}, {address.region} {address.postalCode}
+                        </span>
                       </a>
                     </dd>
                   </div>
@@ -159,7 +162,11 @@ export default function ContactPage() {
               <Card className="shadow-lifted">
                 <h2 className="font-display text-2xl font-semibold text-deep">Send a message</h2>
                 <p className="mt-2 text-[18px] text-charcoal/70">
-                  Fields marked with an asterisk are required.
+                  Fields marked with an asterisk{" "}
+                  <span className="font-semibold text-red-600" aria-hidden="true">
+                    *
+                  </span>{" "}
+                  are required.
                 </p>
                 <div className="mt-8">
                   <ContactForm />
@@ -199,14 +206,17 @@ export default function ContactPage() {
           <div className="mt-10 space-y-4">
             {faqs.map((faq, index) => (
               <Reveal key={faq.question} delay={index * 0.05}>
-                <details className="group rounded-2xl border border-gold/25 bg-white p-6 shadow-soft transition-colors duration-200 open:border-gold/50">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-semibold text-deep marker:hidden">
-                    {faq.question}
+                <details
+                  open
+                  className="group rounded-2xl border border-gold/25 bg-white p-6 shadow-soft transition-colors duration-200 open:border-gold/50"
+                >
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-semibold text-deep marker:hidden [&::-webkit-details-marker]:hidden">
+                    <span className="min-w-0 flex-1 pr-2">{faq.question}</span>
                     <span
                       aria-hidden="true"
-                      className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold transition-transform duration-200 group-open:rotate-45"
+                      className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold"
                     >
-                      +
+                      <X className="h-4 w-4" strokeWidth={2} />
                     </span>
                   </summary>
                   <p className="mt-4 leading-relaxed text-charcoal/75">{faq.answer}</p>

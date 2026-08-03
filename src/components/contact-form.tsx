@@ -1,6 +1,7 @@
 "use client";
 
-import { CheckCircle2, Loader2, Send, TriangleAlert } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Loader2, Send, TriangleAlert } from "lucide-react";
 import { useId, useState, type ChangeEvent, type FormEvent } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -17,6 +18,26 @@ type Errors = Partial<Record<keyof Fields, string>>;
 
 const emptyFields: Fields = { name: "", email: "", phone: "", message: "" };
 
+/** Keep digits only; allow optional leading US country code 1. */
+function usPhoneDigits(value: string): string {
+  const digits = value.replace(/\D/g, "");
+  if (digits.length === 11 && digits.startsWith("1")) return digits.slice(1);
+  return digits;
+}
+
+/** Format as (XXX) XXX-XXXX while typing. */
+function formatUsPhone(value: string): string {
+  const digits = usPhoneDigits(value).slice(0, 10);
+  if (digits.length === 0) return "";
+  if (digits.length < 4) return `(${digits}`;
+  if (digits.length < 7) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+}
+
+function isValidUsPhone(value: string): boolean {
+  return usPhoneDigits(value).length === 10;
+}
+
 function validate(fields: Fields): Errors {
   const errors: Errors = {};
 
@@ -28,27 +49,25 @@ function validate(fields: Fields): Errors {
     errors.email = "Please enter a valid email address.";
   }
 
-  const digits = fields.phone.replace(/\D/g, "");
-  if (fields.phone.trim() && (digits.length < 10 || digits.length > 15)) {
-    errors.phone = "Please enter a phone number with at least 10 digits, or leave it blank.";
-  }
-
-  if (fields.message.trim().length < 10) {
-    errors.message = "A few details about your dog help us reply.";
+  if (!fields.phone.trim()) {
+    errors.phone = "Please enter your phone number.";
+  } else if (!isValidUsPhone(fields.phone)) {
+    errors.phone = "Please enter a valid U.S. phone number, like (269) 555-0134.";
   }
 
   return errors;
 }
 
 export function ContactForm() {
+  const router = useRouter();
   const formId = useId();
   const [fields, setFields] = useState<Fields>(emptyFields);
   const [errors, setErrors] = useState<Errors>({});
-  const [status, setStatus] = useState<"idle" | "submitting" | "sent" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
 
   const update =
     (key: keyof Fields) => (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      const { value } = event.target;
+      const value = key === "phone" ? formatUsPhone(event.target.value) : event.target.value;
       setFields((current) => ({ ...current, [key]: value }));
       setErrors((current) => (current[key] ? { ...current, [key]: undefined } : current));
     };
@@ -76,8 +95,7 @@ export function ContactForm() {
 
       if (!response.ok) throw new Error("Request failed");
 
-      setStatus("sent");
-      setFields(emptyFields);
+      router.push("/contact-us/thank-you");
     } catch {
       setStatus("error");
     }
@@ -89,30 +107,16 @@ export function ContactForm() {
       invalid ? "border-red-600" : "border-gold/30 hover:border-gold/60 focus:border-forest",
     );
 
-  if (status === "sent") {
-    return (
-      <div
-        role="status"
-        className="flex flex-col items-start gap-4 rounded-2xl border border-gold/40 bg-white p-8 shadow-soft"
-      >
-        <CheckCircle2 className="h-9 w-9 text-forest" aria-hidden="true" strokeWidth={1.5} />
-        <h3 className="font-display text-2xl font-semibold text-deep">Got it — thanks</h3>
-        <p className="text-charcoal/75">
-          We usually get back within one business day. If you need us sooner, give us a call.
-        </p>
-        <Button type="button" variant="greenOutline" onClick={() => setStatus("idle")}>
-          Send another message
-        </Button>
-      </div>
-    );
-  }
-
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-6">
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor={`${formId}-name`} className="block text-[18px] font-medium text-deep">
-            Your name <span className="text-red-700">*</span>
+            Your name{" "}
+            <span className="font-semibold text-red-600" aria-hidden="true">
+              *
+            </span>
+            <span className="sr-only">(required)</span>
           </label>
           <input
             id={`${formId}-name`}
@@ -125,7 +129,7 @@ export function ContactForm() {
             aria-invalid={Boolean(errors.name)}
             aria-describedby={errors.name ? `${formId}-name-error` : undefined}
             className={cn("mt-2", fieldClasses(Boolean(errors.name)))}
-            placeholder="Jamie Whitfield"
+            placeholder="John Smith"
           />
           {errors.name ? (
             <p id={`${formId}-name-error`} className="mt-2 flex items-center gap-2 text-[18px] text-red-700">
@@ -137,7 +141,11 @@ export function ContactForm() {
 
         <div>
           <label htmlFor={`${formId}-email`} className="block text-[18px] font-medium text-deep">
-            Email <span className="text-red-700">*</span>
+            Email{" "}
+            <span className="font-semibold text-red-600" aria-hidden="true">
+              *
+            </span>
+            <span className="sr-only">(required)</span>
           </label>
           <input
             id={`${formId}-email`}
@@ -163,13 +171,19 @@ export function ContactForm() {
 
       <div>
         <label htmlFor={`${formId}-phone`} className="block text-[18px] font-medium text-deep">
-          Phone <span className="font-normal text-charcoal/50">(optional)</span>
+          Phone{" "}
+          <span className="font-semibold text-red-600" aria-hidden="true">
+            *
+          </span>
+          <span className="sr-only">(required)</span>
         </label>
         <input
           id={`${formId}-phone`}
           name="phone"
           type="tel"
-          autoComplete="tel"
+          inputMode="tel"
+          autoComplete="tel-national"
+          required
           value={fields.phone}
           onChange={update("phone")}
           aria-invalid={Boolean(errors.phone)}
@@ -187,13 +201,12 @@ export function ContactForm() {
 
       <div>
         <label htmlFor={`${formId}-message`} className="block text-[18px] font-medium text-deep">
-          How can we help? <span className="text-red-700">*</span>
+          How can we help?
         </label>
         <textarea
           id={`${formId}-message`}
           name="message"
           rows={5}
-          required
           value={fields.message}
           onChange={update("message")}
           aria-invalid={Boolean(errors.message)}

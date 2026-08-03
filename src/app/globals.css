@@ -154,9 +154,9 @@
       background-image:
         linear-gradient(
           to bottom,
-          rgb(17 44 33 / 92%) 0%,
-          rgb(13 35 26 / 54%) 16%,
-          rgba(27, 67, 50, 0.22) 34%,
+          rgb(17 44 33) 0%,
+          rgb(13 35 26 / 37%) 16%,
+          rgb(27 67 50 / 0%) 34%,
           transparent 48%
         ),
         linear-gradient(
@@ -164,7 +164,7 @@
           #0f271d 0%,
           #10281e 28%,
           rgb(17 43 32 / 92%) 42%,
-          rgb(15 37 27 / 47%) 58%,
+          rgb(15 37 27 / 31%) 58%,
           rgb(13 30 23 / 7%) 72%,
           transparent 88%
         );

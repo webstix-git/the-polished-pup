@@ -7,12 +7,10 @@ import { Photo } from "@/components/ui/photo";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/reveal";
 import { Section } from "@/components/ui/section";
 import { photos } from "@/lib/content";
-import { site } from "@/lib/site";
 
 const serviceCards = [
   {
     title: "Full-Service Grooming",
-    price: "By appointment",
     description:
       "Drop your dog with us for a bath, cut, and finish. We work one dog at a time — no assembly line.",
     image: photos.fullGroomingYorkie,
@@ -21,7 +19,6 @@ const serviceCards = [
   },
   {
     title: "Self-Service Wash",
-    price: `$${site.selfServicePrice}`,
     description:
       "Raised tubs, shampoo, dryers, and aprons for up to two dogs. Everything's ready when you walk in.",
     image: photos.selfServiceCorgi,
@@ -60,15 +57,12 @@ export function SelfServiceHighlight() {
                     sizes="(min-width: 768px) 45vw, 100vw"
                     imageClassName="transition-transform duration-500 ease-gentle group-hover:scale-[1.04]"
                   />
-                  <span className="absolute left-5 top-5 rounded-full border border-gold/50 bg-deep/90 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-gold-light backdrop-blur-sm">
-                    {item.price}
-                  </span>
                 </div>
 
                 <div className="flex flex-1 flex-col gap-4 p-7 sm:p-8">
                   <h3 className="text-2xl font-semibold tracking-tight text-deep">{item.title}</h3>
                   <p className="text-[18px] leading-relaxed text-charcoal/75">{item.description}</p>
-                  <span className="link-underline mt-auto pt-2 text-[18px] font-medium text-forest group-hover:text-deep">
+                  <span className="mt-auto inline-flex items-center gap-2 pt-2 text-[18px] font-medium text-forest transition-colors duration-200 group-hover:text-deep">
                     Learn more
                     <ArrowRight
                       className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
