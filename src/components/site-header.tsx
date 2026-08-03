@@ -60,6 +60,46 @@ export function SiteHeader() {
 
   const solid = scrolled || menuOpen;
 
+  const navLinkClass = (active: boolean, compact: boolean) =>
+    cn(
+      "relative rounded-full py-3 font-medium transition-colors duration-200",
+      compact
+        ? "px-2.5 text-[16px]"
+        : "px-3 text-[17px] 2xl:px-4 2xl:text-[18px]",
+      solid ? "text-charcoal/80 hover:text-deep" : "text-cream/85 hover:text-white",
+      active && (solid ? "text-deep" : "text-white"),
+    );
+
+  const navLinks = (compact = false) =>
+    navigation.map((item) => {
+      const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+
+      return (
+        <Link
+          key={item.href}
+          href={item.href}
+          aria-current={active ? "page" : undefined}
+          className={navLinkClass(active, compact)}
+        >
+          {item.label}
+          {active ? (
+            <span
+              aria-hidden="true"
+              className={cn(
+                "absolute -bottom-0.5 h-px bg-gold",
+                compact ? "inset-x-2.5" : "inset-x-3 2xl:inset-x-4",
+              )}
+            />
+          ) : null}
+        </Link>
+      );
+    });
+
+  const phoneLinkClass = cn(
+    "link-underline shrink-0 font-bold transition-colors",
+    solid ? "text-charcoal/80 hover:text-deep" : "text-cream/85 hover:text-white",
+  );
+
   const mobileMenu =
     mounted &&
     createPortal(
@@ -67,7 +107,7 @@ export function SiteHeader() {
         {menuOpen ? (
           <motion.div
             key="scrim"
-            className="fixed inset-0 z-[60] bg-charcoal/45 xl:hidden"
+            className="fixed inset-0 z-[60] bg-charcoal/45 nav:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -85,7 +125,7 @@ export function SiteHeader() {
             role="dialog"
             aria-modal="true"
             aria-label="Site menu"
-            className="fixed inset-y-0 right-0 z-[70] flex w-[min(92vw,22rem)] flex-col overflow-y-auto overscroll-contain bg-deep bg-bubbles-soft px-5 pb-10 pt-[max(1.25rem,env(safe-area-inset-top))] shadow-lifted sm:px-6 xl:hidden"
+            className="fixed inset-y-0 right-0 z-[70] flex w-[min(92vw,22rem)] flex-col overflow-y-auto overscroll-contain bg-deep bg-bubbles-soft px-5 pb-10 pt-[max(1.25rem,env(safe-area-inset-top))] shadow-lifted sm:px-6 nav:hidden"
             initial={{ x: reduceMotion ? 0 : "100%", opacity: reduceMotion ? 0 : 1 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: reduceMotion ? 0 : "100%", opacity: reduceMotion ? 0 : 1 }}
@@ -172,42 +212,25 @@ export function SiteHeader() {
             className="min-w-0"
           />
 
+          {/* 1130px–1279px: menu + call grouped on the right */}
+          <div className="hidden items-center gap-2 nav:flex xl:hidden">
+            <nav aria-label="Primary" className="flex items-center gap-0.5">
+              {navLinks(true)}
+            </nav>
+            <a href={contact.phoneHref} className={cn(phoneLinkClass, "text-[16px]")}>
+              <Phone className="h-4 w-4 text-gold" aria-hidden="true" />
+              <span className="sr-only">Call us at </span>
+              {contact.phone}
+            </a>
+          </div>
+
+          {/* 1280px+: standard desktop menu */}
           <nav aria-label="Primary" className="hidden items-center gap-0.5 xl:flex">
-            {navigation.map((item) => {
-              const active =
-                item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
-
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  aria-current={active ? "page" : undefined}
-                  className={cn(
-                    "relative rounded-full px-3 py-3 text-[17px] font-medium transition-colors duration-200 2xl:px-4 2xl:text-[18px]",
-                    solid
-                      ? "text-charcoal/80 hover:text-deep"
-                      : "text-cream/85 hover:text-white",
-                    active && (solid ? "text-deep" : "text-white"),
-                  )}
-                >
-                  {item.label}
-                  {active ? (
-                    <span
-                      aria-hidden="true"
-                      className="absolute inset-x-3 -bottom-0.5 h-px bg-gold 2xl:inset-x-4"
-                    />
-                  ) : null}
-                </Link>
-              );
-            })}
+            {navLinks(false)}
           </nav>
-
           <a
             href={contact.phoneHref}
-            className={cn(
-              "link-underline hidden text-[18px] font-bold transition-colors xl:inline-flex",
-              solid ? "text-charcoal/80 hover:text-deep" : "text-cream/85 hover:text-white",
-            )}
+            className={cn(phoneLinkClass, "hidden text-[18px] xl:inline-flex")}
           >
             <Phone className="h-4 w-4 text-gold" aria-hidden="true" />
             <span className="sr-only">Call us at </span>
@@ -221,7 +244,7 @@ export function SiteHeader() {
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             className={cn(
-              "inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-colors xl:hidden",
+              "inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-colors nav:hidden",
               solid
                 ? "border-deep/20 text-deep hover:bg-deep hover:text-cream"
                 : "border-cream/30 text-cream hover:bg-cream/10",

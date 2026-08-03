@@ -52,7 +52,7 @@ export function HomeHero() {
               href={contact.phoneHref}
               variant="goldOutline"
               size="lg"
-              className="w-full border-cream/50 text-cream hover:border-gold hover:bg-gold hover:text-deep sm:w-auto xl:hidden"
+              className="w-full border-cream/50 text-cream hover:border-gold hover:bg-gold hover:text-deep sm:w-auto nav:hidden"
             >
               <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
               {contact.phone}

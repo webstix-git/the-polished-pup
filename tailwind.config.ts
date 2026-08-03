@@ -5,6 +5,10 @@ const config: Config = {
   content: ["./src/**/*.{ts,tsx,mdx}"],
   theme: {
     extend: {
+      screens: {
+        ...defaultTheme.screens,
+        nav: "1130px",
+      },
       colors: {
         deep: "#1B4332",
         forest: "#2D6A4F",
