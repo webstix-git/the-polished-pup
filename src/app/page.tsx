@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 import { UspStrip } from "@/components/home/usp-strip";
 
 export const metadata = pageMetadata({
-  title: "Full-Service Grooming & Self-Service Dog Wash in South Haven, MI",
+  title: "Full-Service Grooming & Self-Service Dog Wash in South Haven, MI.",
   description:
     "Full-service grooming and a self-service dog wash — $25 for up to two dogs — in South Haven, MI.",
   path: "/",
