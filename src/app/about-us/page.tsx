@@ -16,7 +16,7 @@ import { address, site } from "@/lib/site";
 export const metadata = pageMetadata({
   title: "About Our South Haven Dog Wash & Grooming Spa",
   description:
-    "How The Polished Pup got started in South Haven — full-service grooming and the area's only self-service dog wash.",
+    "How The Polished Pup got started in South Haven — full-service grooming and a well-equipped self-service dog wash.",
   path: "/about-us",
 });
 
@@ -36,8 +36,8 @@ export default function AboutPage() {
 
       <PageHero
         eyebrow="About Us"
-        title="A neighborhood wash room with grooming on the side"
-        lede="We're a small South Haven shop. Getting your dog clean should be straightforward — and a little easier than doing it in your bathtub."
+        title="Self-service washing and grooming, made easy."
+        lede="We're a small South Haven shop. Getting your dog clean should be straightforward — and a little easier than doing the wash in your bathtub."
       />
 
       <Section tone="cream" className="bg-grain">
@@ -46,19 +46,20 @@ export default function AboutPage() {
             <Reveal>
               <Eyebrow>How it started</Eyebrow>
               <h2 className="mt-5 text-display-sm font-semibold text-deep sm:text-[2.6rem] sm:leading-[1.1]">
-                It started with a missing wash room
+                It started with wanting a better wash room
               </h2>
 
               <div className="mt-6 space-y-5 text-[18px] leading-relaxed text-charcoal/75">
                 <p>
-                  Southwest Michigan had nowhere to wash your own dog. We needed that option, and
-                  figured our neighbors did too.
+                  Southwest Michigan had self-service dog washes, but the options weren&rsquo;t always
+                  convenient or well-equipped. We wanted to create a clean, comfortable space with
+                  the quality equipment and flexibility dog owners deserve.
                 </p>
                 <p>
-                  So we built it: raised tubs instead of sore backs, real dryers instead of a wet
-                  hallway, and someone here who&rsquo;s happy to see your dog — whether it&rsquo;s
-                  a puppy&rsquo;s first bath or a fourteen-year-old who likes the water a little
-                  warmer.
+                  So we built it with raised tubs that make bath time easier on your back, powerful
+                  dryers that get the job done, and a team that&rsquo;s happy to welcome your
+                  dog&mdash;from a puppy&rsquo;s first bath to a fourteen-year-old who likes the
+                  water a little warmer.
                 </p>
                 <p>
                   Now that same room sees weekend visitors from the lake and regulars who come in

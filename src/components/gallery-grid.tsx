@@ -215,6 +215,7 @@ export function GalleryGrid({
                   alt=""
                   placeholderLabel={item.label}
                   sizes="(min-width: 1024px) 25vw, 50vw"
+                  objectPosition={item.objectPosition}
                   imageClassName="transition-transform duration-500 ease-gentle group-hover:scale-[1.04]"
                 />
                 <span

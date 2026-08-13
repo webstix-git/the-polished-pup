@@ -19,8 +19,9 @@ export function AboutTeaser() {
               We built the place we wished South Haven already had
             </h2>
             <p className="mt-6 max-w-prose text-[18px] leading-relaxed text-cream/80">
-              Southwest Michigan didn&rsquo;t have a place to wash your own dog. We needed one, and
-              figured our neighbors did too.
+              Southwest Michigan had self-service dog washes, but the options weren&rsquo;t always
+              convenient or well-equipped. We wanted a clean, comfortable space with quality
+              equipment and the flexibility dog owners deserve.
             </p>
             <p className="mt-4 max-w-prose text-[18px] leading-relaxed text-cream/70">
               So we opened The Polished Pup: a shop that&rsquo;s glad to see your dog, whether
@@ -48,7 +49,7 @@ export function AboutTeaser() {
 
               <div className="absolute bottom-0 left-4 z-10 max-w-[12.5rem] rounded-2xl border border-deep/15 bg-gold px-5 py-4 shadow-lifted sm:left-6 sm:max-w-[13.5rem] sm:px-6 sm:py-5">
                 <p className="text-[17px] font-semibold leading-snug text-deep">
-                  <span className="block">The area&rsquo;s only</span>
+                  <span className="block">Clean, well-equipped</span>
                   self-service wash
                 </p>
               </div>

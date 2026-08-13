@@ -19,7 +19,7 @@ export function GalleryPreview() {
               Dogs and decor
             </h2>
             <p className="mt-4 max-w-prose text-[18px] leading-relaxed text-charcoal/75">
-              Clean dogs, work in progress, and a few corners of the shop that make it feel like
+              Freshly groomed dogs, happy pups, and a few corners of the shop that make it feel like
               somewhere you&rsquo;d actually want to hang around.
             </p>
           </div>

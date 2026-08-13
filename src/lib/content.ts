@@ -32,6 +32,11 @@ export const photos = {
   galleryPawTrim: "/images/photos/gallery-06-paw-trim.jpg",
   galleryCorgi: "/images/photos/gallery-corgi.jpg",
   galleryGoldenClose: "/images/photos/gallery-golden-close.jpg",
+  galleryTennis: "/images/photos/gallery-page-01-tennis.jpg",
+  galleryBed: "/images/photos/gallery-page-02-bed.jpg",
+  galleryBeach: "/images/photos/gallery-page-03-beach.jpg",
+  galleryFrenchie: "/images/photos/gallery-page-04-frenchie.jpg",
+  galleryPoodle: "/images/photos/gallery-page-05-poodle.jpg",
 } as const;
 
 export type ServiceItem = {
@@ -44,7 +49,7 @@ export const selfServiceFeatures = [
   "Raised tubs that are easier on your back",
   "Shampoo and conditioner ready to use",
   "High-velocity dryers",
-  "Brushes, combs, towels, and aprons included",
+  "Towels and aprons included, with towel warmers available for added comfort",
   "Up to two dogs per visit",
   "We clean the station when you're done",
 ];
@@ -105,7 +110,7 @@ export const fullServiceItems: ServiceItem[] = [
 
 export const usps = [
   {
-    title: "The Area's Only Self-Service Wash",
+    title: "A Well-Equipped Self-Service Wash",
     description:
       "No bathtub cleanup at home. Use our tubs, shampoo, and dryers — then walk out with a clean dog.",
     icon: "UspSelfService",
@@ -184,7 +189,7 @@ export const homeGalleryItems: GalleryItem[] = [
   },
   {
     src: photos.galleryBlackLab,
-    alt: "A black dog with its tongue out in a stainless steel wash tub",
+    alt: "A black dog with their tongue out in a stainless steel wash tub",
     label: "Tub time",
     objectPosition: "62% 20%",
   },
@@ -195,14 +200,49 @@ export const homeGalleryItems: GalleryItem[] = [
     objectPosition: "center 12%",
   },
   {
-    src: photos.galleryCorgi,
-    alt: "A Pembroke Welsh Corgi being rinsed in a wash tub",
-    label: "Fresh rinse",
-    objectPosition: "38% 30%",
+    src: photos.bookWash,
+    alt: "A tan dog looking at a tennis ball printed with The Polished Pup Self Serve Wash & Groom in South Haven",
+    label: "Self-serve",
+    objectPosition: "40% 28%",
   },
 ];
 
 export const galleryItems: GalleryItem[] = [
+  {
+    src: photos.galleryTennis,
+    alt: "A tan dog looking at a tennis ball printed with The Polished Pup Self Serve Wash & Groom in South Haven",
+    label: "Self-serve",
+    tall: true,
+    objectPosition: "40% 28%",
+  },
+  {
+    src: photos.galleryBed,
+    alt: "A black French Bulldog and a German Shepherd sharing a round cream dog bed",
+    label: "Shop pals",
+    wide: true,
+    objectPosition: "center 42%",
+  },
+  {
+    src: photos.galleryFrenchie,
+    alt: "A black French Bulldog in a pink harness looking at the camera",
+    label: "Character",
+    tall: true,
+    objectPosition: "center 22%",
+  },
+  {
+    src: photos.galleryBeach,
+    alt: "A German Shepherd mix sitting on the sandy shore beside clear, rocky water",
+    label: "Lake day",
+    wide: true,
+    objectPosition: "center 38%",
+  },
+  {
+    src: photos.galleryPoodle,
+    alt: "A well-groomed charcoal poodle standing with their paws on a person's lap",
+    label: "Fresh coat",
+    tall: true,
+    objectPosition: "center 20%",
+  },
   {
     src: photos.dalmatianTub,
     alt: "A grinning Dalmatian standing in a stainless steel wash tub against the shop's green wall",
@@ -210,21 +250,10 @@ export const galleryItems: GalleryItem[] = [
     tall: true,
   },
   {
-    src: photos.towelDuck,
-    alt: "A freshly washed West Highland terrier wrapped in a yellow towel with a rubber duck on its head",
-    label: "After the bath",
-    wide: true,
-  },
-  {
     src: photos.goldenRinse,
-    alt: "A golden retriever with its tongue out being rinsed with a handheld sprayer in the wash room",
+    alt: "A golden retriever with their tongue out being rinsed with a handheld sprayer in the wash room",
     label: "Rinse cycle",
     tall: true,
-  },
-  {
-    src: photos.decorTray,
-    alt: "A brass mirrored tray of dog treats on a wooden counter beside a vintage radio",
-    label: "Treat counter",
   },
   {
     src: photos.seniorTub,
@@ -243,25 +272,9 @@ export const galleryItems: GalleryItem[] = [
     label: "In good hands",
   },
   {
-    src: photos.shihTzuGroom,
-    alt: "A Shih Tzu with a pink top knot being groomed with a comb and scissors",
-    label: "Full-service groom",
-  },
-  {
-    src: photos.tealTowel,
-    alt: "A wet Australian shepherd wrapped in a teal towel, smiling at the camera",
-    label: "Towel time",
-  },
-  {
-    src: photos.comb,
-    alt: "A Jack Russell terrier holding a wooden grooming comb in its mouth",
-    label: "Brush out",
-    wide: true,
-  },
-  {
-    src: photos.spaCucumber,
-    alt: "A Labrador in a towel turban relaxing with cucumber slices over its eyes",
-    label: "Spa day",
+    src: photos.decorTray,
+    alt: "A brass mirrored tray of dog treats on a wooden counter beside a vintage radio",
+    label: "Treat counter",
   },
 ];
 
@@ -313,7 +326,7 @@ export const faqs = [
   {
     question: "What does the $25 self-service wash include?",
     answer:
-      "Up to two dogs, a raised tub, shampoo and conditioner, a dryer, brushes, towels, and an apron. We clean up after you're done.",
+      "Up to two dogs, a raised tub, shampoo and conditioner, a dryer, towels, and an apron — with towel warmers available. We clean up after you're done.",
   },
   {
     question: "Do you groom cats?",

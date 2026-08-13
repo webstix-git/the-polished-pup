@@ -10,7 +10,7 @@ import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Gallery of Dogs & Decor",
   description:
-    "Photos from inside The Polished Pup in South Haven — wash room days, grooms in progress, and the shop itself.",
+    "Photos from The Polished Pup in South Haven — happy pups, wash room days, and the shop itself.",
   path: "/gallery",
 });
 
@@ -31,7 +31,7 @@ export default function GalleryPage() {
       <PageHero
         eyebrow="Gallery"
         title="Dogs and decor"
-        lede="Clean dogs, the wash room at work, and a few shop details from our spot on Blue Star Highway."
+        lede="Freshly groomed dogs, happy pups, and a few corners of the shop on Blue Star Highway."
       />
 
       <Section tone="cream" className="bg-grain">

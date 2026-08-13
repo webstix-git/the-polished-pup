@@ -10,14 +10,15 @@ export function UspStrip() {
   return (
     <Section tone="sage" size="compact">
       <Container width="wide">
-        <Reveal className="max-w-full sm:max-w-[80%]">
-          <Eyebrow>Why Choose Us</Eyebrow>
-          <h2 className="mt-5 text-[1.85rem] font-semibold leading-[1.12] text-deep sm:text-display-sm sm:text-[2.6rem] sm:leading-[1.1]">
-            What people come here for
-          </h2>
-          <p className="mt-4 max-w-prose text-[18px] leading-relaxed text-charcoal/75">
-            The self-service wash most shops don&rsquo;t have, plus grooming that doesn&rsquo;t rush
-            your dog. Built for South Haven and the folks who visit from around the lake.
+        <Reveal>
+          <div className="max-w-full sm:max-w-[80%]">
+            <Eyebrow>Why Choose Us</Eyebrow>
+            <h2 className="mt-5 text-[1.85rem] font-semibold leading-[1.12] text-deep sm:text-display-sm sm:text-[2.6rem] sm:leading-[1.1]">
+              What people come here for
+            </h2>
+          </div>
+          <p className="mt-4 text-[18px] leading-relaxed text-charcoal/75">
+            Give your dog a fresh start with easy self-service washing and personalized grooming in the heart of South Haven.
           </p>
         </Reveal>
 

@@ -39,8 +39,8 @@ export function HomeHero() {
           </h1>
 
           <p className="mt-5 max-w-lg text-[17px] leading-relaxed text-cream/90 sm:mt-6 sm:text-[18px]">
-            Book a full groom when you want it done for you. Use the self-service wash when
-            you&rsquo;d rather handle it yourself. Both under one roof in South Haven.
+            Book a full groom when you want the work done for you. Use the self-service wash when
+            you&rsquo;d rather wash your dog yourself. Both under one roof in South Haven.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:items-center">

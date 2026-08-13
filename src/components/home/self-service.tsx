@@ -21,9 +21,10 @@ const serviceCards = [
     title: "Self-Service Wash",
     description:
       "Raised tubs, shampoo, dryers, and aprons for up to two dogs. Everything's ready when you walk in.",
-    image: photos.selfServiceCorgi,
-    alt: "A Pembroke Welsh Corgi being rinsed during a self-service wash",
+    image: photos.dalmatianTub,
+    alt: "A happy Dalmatian standing in a stainless steel self-service wash tub at The Polished Pup",
     href: "/services#self-service",
+    objectPosition: "center 22%",
   },
 ];
 
@@ -34,11 +35,11 @@ export function SelfServiceHighlight() {
         <Reveal className="w-full max-w-full sm:max-w-[80%]">
           <Eyebrow>What We Offer</Eyebrow>
           <h2 className="mt-5 text-[1.85rem] font-semibold leading-[1.12] text-deep sm:text-display-sm sm:text-[2.75rem] sm:leading-[1.08]">
-            Grooming by appointment. Self-wash when you walk in.
+            Professional grooming by appointment. Self-wash available for walk-ins.
           </h2>
           <p className="mt-4 max-w-prose text-[18px] leading-relaxed text-charcoal/75">
             Need a full groom? Book with us. Prefer to wash your own dog? Our stations are set up
-            with tubs, shampoo, and dryers so you can get it done without the mess at home.
+            with tubs, shampoo, and dryers so you can skip the mess at home.
           </p>
         </Reveal>
 
@@ -55,6 +56,7 @@ export function SelfServiceHighlight() {
                     alt={item.alt}
                     placeholderLabel={item.title}
                     sizes="(min-width: 768px) 45vw, 100vw"
+                    objectPosition={item.objectPosition}
                     imageClassName="transition-transform duration-500 ease-gentle group-hover:scale-[1.04]"
                   />
                 </div>

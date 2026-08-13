@@ -36,7 +36,7 @@ export default function ServicesPage() {
 
       <PageHero
         eyebrow="Services"
-        title="Wash it yourself, or leave it with us"
+        title="Wash your dog yourself, or leave the grooming to us."
         lede="Self-service wash stations for $25, or full-service grooming by appointment — both in our South Haven shop."
       >
         <ButtonLink href="#full-service" variant="gold" size="lg">
@@ -107,7 +107,7 @@ export default function ServicesPage() {
                 Full-Service Grooming &amp; Spa
               </h2>
               <p className="mt-5 max-w-prose text-[18px] leading-relaxed text-cream/80">
-                Prefer not to do it yourself? Book a groom and we&rsquo;ll take it from there —
+                Prefer not to wash your dog yourself? Book a groom and we&rsquo;ll handle the rest —
                 one dog at a time, at their pace.
               </p>
             </Reveal>
@@ -171,7 +171,7 @@ export default function ServicesPage() {
             </h2>
           </Reveal>
 
-          <Stagger as="ul" className="mt-12 grid gap-6 md:grid-cols-2">
+          <Stagger as="ul" className="mt-12 grid gap-6 md:grid-cols-3">
             {[
               {
                 title: "No appointment for the wash room",
@@ -180,10 +180,6 @@ export default function ServicesPage() {
               {
                 title: "Bring your dog on a leash",
                 body: "We provide towels, aprons, shampoo, and dryers. You bring the dog.",
-              },
-              {
-                title: "Nervous or senior dogs are welcome",
-                body: "Tell us what sets them off and we'll slow down and build in breaks.",
               },
               {
                 title: "Grooming is by appointment",

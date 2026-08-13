@@ -25,8 +25,8 @@ const previews = [
     price: `$${site.selfServicePrice}`,
     description:
       "Raised tubs, shampoo, dryers, and aprons — stocked and ready when you walk in.",
-    image: photos.selfServiceCorgi,
-    alt: "A Pembroke Welsh Corgi being rinsed during a self-service wash",
+    image: photos.dalmatianTub,
+    alt: "A happy Dalmatian standing in a stainless steel self-service wash tub at The Polished Pup",
     href: "/services#self-service",
   },
 ];
@@ -42,7 +42,7 @@ export function ServicesPreview() {
               Two ways to get your dog clean
             </h2>
             <p className="mt-4 max-w-prose text-[18px] leading-relaxed text-charcoal/75">
-              Use the wash room yourself, or book a groom and leave it with us.
+              Use the wash room yourself, or book a groom and leave the grooming to us.
             </p>
           </div>
           <ButtonLink href="/services" variant="greenOutline" className="shrink-0">
