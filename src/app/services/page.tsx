@@ -115,10 +115,11 @@ export default function ServicesPage() {
             <Reveal delay={0.1}>
               <div className="frame-ornate relative aspect-[4/3] overflow-hidden rounded-4xl border border-gold/35 shadow-lifted">
                 <Photo
-                  src={photos.fullGroomingYorkie}
-                  alt="A Yorkshire Terrier being groomed with a comb and scissors at The Polished Pup"
+                  src={photos.galleryBed}
+                  alt="A black French Bulldog and a German Shepherd sharing a round cream dog bed"
                   placeholderLabel="Full-service grooming"
                   sizes="(min-width: 1024px) 40vw, 100vw"
+                  objectPosition="center 38%"
                 />
               </div>
             </Reveal>

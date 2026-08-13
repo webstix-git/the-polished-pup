@@ -37,6 +37,12 @@ export const photos = {
   galleryBeach: "/images/photos/gallery-page-03-beach.jpg",
   galleryFrenchie: "/images/photos/gallery-page-04-frenchie.jpg",
   galleryPoodle: "/images/photos/gallery-page-05-poodle.jpg",
+  gallerySpottedSuds: "/images/photos/gallery-page-06-spotted-suds.jpg",
+  galleryBlueTowel: "/images/photos/gallery-page-07-blue-towel.jpg",
+  galleryWetDoodle: "/images/photos/gallery-page-08-wet-doodle.jpg",
+  galleryTwoPups: "/images/photos/gallery-page-09-two-pups.jpg",
+  galleryHappySit: "/images/photos/gallery-page-10-happy-sit.jpg",
+  galleryCorgiTowel: "/images/photos/gallery-page-11-corgi-towel.jpg",
 } as const;
 
 export type ServiceItem = {
@@ -49,7 +55,7 @@ export const selfServiceFeatures = [
   "Raised tubs that are easier on your back",
   "Shampoo and conditioner ready to use",
   "High-velocity dryers",
-  "Towels and aprons included, with towel warmers available for added comfort",
+  "Towel warmers available for added comfort",
   "Up to two dogs per visit",
   "We clean the station when you're done",
 ];
@@ -209,6 +215,46 @@ export const homeGalleryItems: GalleryItem[] = [
 
 export const galleryItems: GalleryItem[] = [
   {
+    src: photos.gallerySpottedSuds,
+    alt: "A spotted dog grinning beside a shampoo bottle in the wash station",
+    label: "Wash day",
+    objectPosition: "28% 18%",
+  },
+  {
+    src: photos.galleryBlueTowel,
+    alt: "A black dog in a stainless steel tub with a light blue towel wrapped around their head",
+    label: "Towel time",
+    tall: true,
+    objectPosition: "center 18%",
+  },
+  {
+    src: photos.galleryWetDoodle,
+    alt: "A wet golden doodle looking at the camera with a white towel around their neck",
+    label: "Fresh rinse",
+    tall: true,
+    objectPosition: "center 16%",
+  },
+  {
+    src: photos.galleryTwoPups,
+    alt: "Two dogs in the shop lounge, one with a light blue towel draped over their back",
+    label: "After the bath",
+    wide: true,
+    objectPosition: "38% 32%",
+  },
+  {
+    src: photos.galleryHappySit,
+    alt: "A tan and white dog sitting on the shop floor looking up with a happy expression",
+    label: "Happy pup",
+    objectPosition: "42% 22%",
+  },
+  {
+    src: photos.galleryCorgiTowel,
+    alt: "A Corgi wrapped in an orange towel standing in a stainless steel wash tub",
+    label: "Tub time",
+    tall: true,
+    objectPosition: "center 28%",
+  },
+  {
     src: photos.galleryTennis,
     alt: "A tan dog looking at a tennis ball printed with The Polished Pup Self Serve Wash & Groom in South Haven",
     label: "Self-serve",
@@ -270,11 +316,6 @@ export const galleryItems: GalleryItem[] = [
     src: photos.dalmatianGroomer,
     alt: "A liver-spotted Dalmatian leaning happily against a groomer's arm in the wash tub",
     label: "In good hands",
-  },
-  {
-    src: photos.decorTray,
-    alt: "A brass mirrored tray of dog treats on a wooden counter beside a vintage radio",
-    label: "Treat counter",
   },
 ];
 
