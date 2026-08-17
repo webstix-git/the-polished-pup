@@ -45,7 +45,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact Us"
         title="Come say hello on Blue Star Highway"
-        lede="Questions about a groom, a nervous dog, or the self-service wash? Call, email, or use the form — we read every message ourselves."
+        lede="Questions about grooming or the self-service wash? Call, email, or complete the form below, and we'll respond promptly."
       />
 
       <Section tone="cream" className="bg-grain">
