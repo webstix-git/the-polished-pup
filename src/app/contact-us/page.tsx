@@ -9,7 +9,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { Section } from "@/components/ui/section";
 import { faqs } from "@/lib/content";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
-import { address, contact, hours, hoursNotes, socials } from "@/lib/site";
+import { address, contact, hours, socials } from "@/lib/site";
 
 export const metadata = pageMetadata({
   title: "Contact & Directions in South Haven, MI",
@@ -121,11 +121,6 @@ export default function ContactPage() {
                           {entry.display}
                         </p>
                       ))}
-                      <div className="mt-3 space-y-1 text-[15px] text-charcoal/60">
-                        {hoursNotes.map((note) => (
-                          <p key={note}>{note}</p>
-                        ))}
-                      </div>
                     </dd>
                   </div>
                 </div>
