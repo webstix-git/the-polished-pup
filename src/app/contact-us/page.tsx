@@ -1,4 +1,4 @@
-import { Clock, Facebook, Instagram, Mail, MapPin, Phone, X } from "lucide-react";
+import { Clock, Facebook, Instagram, Mail, MapPin, Minus, Phone, Plus } from "lucide-react";
 
 import { ContactForm } from "@/components/contact-form";
 import { PageHero } from "@/components/page-hero";
@@ -209,9 +209,10 @@ export default function ContactPage() {
                     <span className="min-w-0 flex-1 pr-2">{faq.question}</span>
                     <span
                       aria-hidden="true"
-                      className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold"
+                      className="relative inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold"
                     >
-                      <X className="h-4 w-4" strokeWidth={2} />
+                      <Plus className="h-4 w-4 group-open:hidden" strokeWidth={2} />
+                      <Minus className="absolute h-4 w-4 hidden group-open:block" strokeWidth={2} />
                     </span>
                   </summary>
                   <p className="mt-4 leading-relaxed text-charcoal/75">{faq.answer}</p>
