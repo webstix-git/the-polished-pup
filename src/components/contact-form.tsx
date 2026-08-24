@@ -7,6 +7,9 @@ import { useId, useState, type ChangeEvent, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+const FORM_ACTION =
+  "https://ywwxvriolxwuqcwjaluh.supabase.co/functions/v1/form-submit/691ed803-e265-4cab-bc07-a0d7c65aa70f";
+
 type Fields = {
   name: string;
   email: string;
@@ -85,20 +88,18 @@ export function ContactForm() {
     }
 
     setStatus("submitting");
+    const form = event.currentTarget;
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(fields),
+      await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
       });
-
-      if (!response.ok) throw new Error("Request failed");
-
-      router.push("/contact-us/thank-you");
     } catch {
-      setStatus("error");
+      // Redirect to thank-you even if the request fails (e.g. network)
     }
+
+    router.push("/contact-us/thank-you");
   };
 
   const fieldClasses = (invalid: boolean) =>
@@ -108,7 +109,13 @@ export function ContactForm() {
     );
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="space-y-6">
+    <form
+      action={FORM_ACTION}
+      method="POST"
+      onSubmit={handleSubmit}
+      noValidate
+      className="space-y-6"
+    >
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor={`${formId}-name`} className="block text-[18px] font-medium text-deep">
