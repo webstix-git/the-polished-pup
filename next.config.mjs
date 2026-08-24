@@ -12,6 +12,10 @@ const nextConfig = {
     return [
       { source: "/about", destination: "/about-us", permanent: true },
       { source: "/contact", destination: "/contact-us", permanent: true },
+      // Legacy GoDaddy / Website Builder URLs → home
+      { source: "/f/:path*", destination: "/", permanent: true },
+      { source: "/ols/:path*", destination: "/", permanent: true },
+      { source: "/ols", destination: "/", permanent: true },
     ];
   },
 };
