@@ -3,6 +3,10 @@ import path from "node:path";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  env: {
+    NEXT_PUBLIC_TURNSTILE_SITE_KEY:
+      process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || process.env.TURNSTILE_SITE_KEY || "",
+  },
   // A lockfile in the parent folder makes Next guess the wrong workspace root.
   outputFileTracingRoot: path.join(import.meta.dirname, "./"),
   images: {

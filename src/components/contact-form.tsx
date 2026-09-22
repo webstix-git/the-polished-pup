@@ -16,7 +16,10 @@ import {
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
+const TURNSTILE_SITE_KEY =
+  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ||
+  process.env.NEXT_PUBLIC_TURNSTILE_SITEKEY ||
+  "0x4AAAAAAE_l_Lgd7y2ims9g";
 
 type TurnstileApi = {
   render: (
@@ -24,6 +27,8 @@ type TurnstileApi = {
     options: {
       sitekey: string;
       theme?: "light" | "dark" | "auto";
+      size?: "normal" | "compact" | "flexible";
+      appearance?: "always" | "execute" | "interaction-only";
       callback?: (token: string) => void;
       "expired-callback"?: () => void;
       "error-callback"?: () => void;
@@ -36,6 +41,7 @@ type TurnstileApi = {
 declare global {
   interface Window {
     turnstile?: TurnstileApi;
+    onPolishedPupTurnstileLoad?: () => void;
   }
 }
 
@@ -119,6 +125,8 @@ export function ContactForm() {
     widgetIdRef.current = window.turnstile.render(widgetRef.current, {
       sitekey: TURNSTILE_SITE_KEY,
       theme: "light",
+      size: "normal",
+      appearance: "always",
       callback: (token) => {
         setTurnstileToken(token);
         setErrors((current) =>
@@ -131,9 +139,13 @@ export function ContactForm() {
   }, []);
 
   useEffect(() => {
+    window.onPolishedPupTurnstileLoad = renderTurnstile;
     renderTurnstile();
 
     return () => {
+      if (window.onPolishedPupTurnstileLoad === renderTurnstile) {
+        delete window.onPolishedPupTurnstileLoad;
+      }
       if (widgetIdRef.current && window.turnstile) {
         window.turnstile.remove(widgetIdRef.current);
         widgetIdRef.current = null;
@@ -194,8 +206,9 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-6">
       <Script
-        src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onPolishedPupTurnstileLoad"
         strategy="afterInteractive"
+        onLoad={renderTurnstile}
         onReady={renderTurnstile}
       />
 
@@ -311,10 +324,10 @@ export function ContactForm() {
         ) : null}
       </div>
 
-      <div>
+      <div className="overflow-visible">
         <div
           ref={widgetRef}
-          className="min-h-[65px]"
+          className="min-h-[65px] w-full max-w-[300px] overflow-visible"
           aria-describedby={errors.turnstile ? `${formId}-turnstile-error` : undefined}
         />
         {errors.turnstile ? (
