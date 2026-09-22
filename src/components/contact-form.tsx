@@ -1,14 +1,43 @@
 "use client";
 
+import Script from "next/script";
 import { useRouter } from "next/navigation";
 import { Loader2, Send, TriangleAlert } from "lucide-react";
-import { useId, useState, type ChangeEvent, type FormEvent } from "react";
+import {
+  useCallback,
+  useEffect,
+  useId,
+  useRef,
+  useState,
+  type ChangeEvent,
+  type FormEvent,
+} from "react";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const FORM_ACTION =
-  "https://ywwxvriolxwuqcwjaluh.supabase.co/functions/v1/form-submit/691ed803-e265-4cab-bc07-a0d7c65aa70f";
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
+
+type TurnstileApi = {
+  render: (
+    element: HTMLElement,
+    options: {
+      sitekey: string;
+      theme?: "light" | "dark" | "auto";
+      callback?: (token: string) => void;
+      "expired-callback"?: () => void;
+      "error-callback"?: () => void;
+    },
+  ) => string;
+  reset: (widgetId: string) => void;
+  remove: (widgetId: string) => void;
+};
+
+declare global {
+  interface Window {
+    turnstile?: TurnstileApi;
+  }
+}
 
 type Fields = {
   name: string;
@@ -17,7 +46,7 @@ type Fields = {
   message: string;
 };
 
-type Errors = Partial<Record<keyof Fields, string>>;
+type Errors = Partial<Record<keyof Fields | "turnstile", string>>;
 
 const emptyFields: Fields = { name: "", email: "", phone: "", message: "" };
 
@@ -41,7 +70,7 @@ function isValidUsPhone(value: string): boolean {
   return usPhoneDigits(value).length === 10;
 }
 
-function validate(fields: Fields): Errors {
+function validate(fields: Fields, turnstileToken: string): Errors {
   const errors: Errors = {};
 
   if (fields.name.trim().length < 2) {
@@ -58,15 +87,59 @@ function validate(fields: Fields): Errors {
     errors.phone = "Please enter a valid U.S. phone number, like (269) 555-0134.";
   }
 
+  if (!turnstileToken) {
+    errors.turnstile = "Please complete the verification before sending.";
+  }
+
   return errors;
 }
 
 export function ContactForm() {
   const router = useRouter();
   const formId = useId();
+  const widgetRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef = useRef<string | null>(null);
   const [fields, setFields] = useState<Fields>(emptyFields);
+  const [turnstileToken, setTurnstileToken] = useState("");
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
+
+  const resetTurnstile = useCallback(() => {
+    setTurnstileToken("");
+    if (widgetIdRef.current && window.turnstile) {
+      window.turnstile.reset(widgetIdRef.current);
+    }
+  }, []);
+
+  const renderTurnstile = useCallback(() => {
+    if (!TURNSTILE_SITE_KEY || !widgetRef.current || !window.turnstile || widgetIdRef.current) {
+      return;
+    }
+
+    widgetIdRef.current = window.turnstile.render(widgetRef.current, {
+      sitekey: TURNSTILE_SITE_KEY,
+      theme: "light",
+      callback: (token) => {
+        setTurnstileToken(token);
+        setErrors((current) =>
+          current.turnstile ? { ...current, turnstile: undefined } : current,
+        );
+      },
+      "expired-callback": () => setTurnstileToken(""),
+      "error-callback": () => setTurnstileToken(""),
+    });
+  }, []);
+
+  useEffect(() => {
+    renderTurnstile();
+
+    return () => {
+      if (widgetIdRef.current && window.turnstile) {
+        window.turnstile.remove(widgetIdRef.current);
+        widgetIdRef.current = null;
+      }
+    };
+  }, [renderTurnstile]);
 
   const update =
     (key: keyof Fields) => (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -78,28 +151,38 @@ export function ContactForm() {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const nextErrors = validate(fields);
+    const nextErrors = validate(fields, turnstileToken);
     setErrors(nextErrors);
 
     if (Object.keys(nextErrors).length > 0) {
       const firstKey = Object.keys(nextErrors)[0];
-      document.getElementById(`${formId}-${firstKey}`)?.focus();
+      if (firstKey !== "turnstile") {
+        document.getElementById(`${formId}-${firstKey}`)?.focus();
+      }
       return;
     }
 
     setStatus("submitting");
-    const form = event.currentTarget;
 
     try {
-      await fetch(form.action, {
-        method: form.method,
-        body: new FormData(form),
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...fields,
+          turnstileToken,
+        }),
       });
-    } catch {
-      // Redirect to thank-you even if the request fails (e.g. network)
-    }
 
-    router.push("/contact-us/thank-you");
+      if (!response.ok) {
+        throw new Error("Submit failed");
+      }
+
+      router.push("/contact-us/thank-you");
+    } catch {
+      setStatus("error");
+      resetTurnstile();
+    }
   };
 
   const fieldClasses = (invalid: boolean) =>
@@ -109,13 +192,13 @@ export function ContactForm() {
     );
 
   return (
-    <form
-      action={FORM_ACTION}
-      method="POST"
-      onSubmit={handleSubmit}
-      noValidate
-      className="space-y-6"
-    >
+    <form onSubmit={handleSubmit} noValidate className="space-y-6">
+      <Script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+        strategy="afterInteractive"
+        onReady={renderTurnstile}
+      />
+
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor={`${formId}-name`} className="block text-[18px] font-medium text-deep">
@@ -224,6 +307,23 @@ export function ContactForm() {
           <p id={`${formId}-message-error`} className="mt-2 flex items-center gap-2 text-[18px] text-red-700">
             <TriangleAlert className="h-4 w-4 shrink-0" aria-hidden="true" />
             {errors.message}
+          </p>
+        ) : null}
+      </div>
+
+      <div>
+        <div
+          ref={widgetRef}
+          className="min-h-[65px]"
+          aria-describedby={errors.turnstile ? `${formId}-turnstile-error` : undefined}
+        />
+        {errors.turnstile ? (
+          <p
+            id={`${formId}-turnstile-error`}
+            className="mt-2 flex items-center gap-2 text-[18px] text-red-700"
+          >
+            <TriangleAlert className="h-4 w-4 shrink-0" aria-hidden="true" />
+            {errors.turnstile}
           </p>
         ) : null}
       </div>
